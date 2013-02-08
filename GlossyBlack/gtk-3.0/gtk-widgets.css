@@ -1,0 +1,506 @@
+/*
+    Name:        GlossyBlack/gtk-3.0/gtk-widgets.css
+    Purpose:     GlossyBlack GTK3 theme
+    Author:      Andrea Zanellato
+    Modified by:
+    Created:     2013/02/03
+    Revision:    $Hash$
+    Copyright:   (c) Andrea Zanellato
+    Licence:     GNU General Public License Version 3
+*/
+/*
+===============================================================================
+    Default
+===============================================================================
+*/
+*
+{
+    engine:                                     none;
+
+    -adwaita-focus-border-color:                #f07800;
+
+    -GtkButton-child-displacement-x:            0;
+    -GtkButton-child-displacement-y:            0;
+    -GtkButton-default-border:                  0;
+    -GtkButton-image-spacing:                   0;
+    -GtkButton-inner-border:                    0;
+    -GtkButton-interior-focus:                  true;
+
+    -GtkCheckButton-indicator-size:             14;
+    -GtkCheckMenuItem-indicator-size:           14;
+
+    -GtkPaned-handle-size:                      6;
+
+    -GtkScrolledWindow-scrollbar-spacing: 0;
+    -GtkScrolledWindow-scrollbars-within-bevel: 1;
+
+    -GtkWidget-link-color:                      @link_color;
+    -GtkWidget-visited-link-color:              @link_color;
+
+    -GtkWidget-focus-line-width:                1;
+    -GtkWidget-focus-padding:                   1;
+
+    -GtkWidget-separator-height:                2;
+    -GtkWidget-separator-width:                 2;
+
+    -GtkWidget-wide-separators:                 false;
+
+    /* Get rid of the resize grip that is shown also over other widgets. */
+    -GtkWindow-resize-grip-height:              0;
+    -GtkWindow-resize-grip-width:               0;
+
+    -WnckTasklist-fade-overlay-rect:            0;
+
+    /* Inherit the color from parent by default */
+    color:                                      inherit;
+    border-color:                               transparent;
+    background-color:                           @bg_color;
+
+    border-width:                               2px;
+
+    margin:                                     1px;
+}
+GtkWindow
+{
+    color:                                      @fg_color;
+}
+GtkWindow:backdrop
+{
+    color:                                      @backdrop_fg_color;
+}
+/*
+===============================================================================
+    States
+===============================================================================
+*/
+*:insensitive
+{
+    color:          shade( @bg_color, 0.6 );
+    text-shadow:    0 1 alpha( shade( @bg_color, 1.25 ), 0.5 );
+}
+*:active
+{
+}
+*:active:hover:insensitive
+{
+}
+*:active:insensitive
+{
+}
+*:hover
+{
+}
+*:hover:insensitive
+{
+    background-image:   none;
+}
+*:selected,
+*:selected:focused
+{
+    background-color:   alpha( @selected_bg_color, 0.9 );
+    background-image:   none;
+    color:              @selected_fg_color;
+}
+*:selected:backdrop,
+*:selected:focused:backdrop
+{
+    background-color:   alpha( @backdrop_selected_bg_color, 0.9 );
+    background-image:   none;
+    color:              @backdrop_selected_fg_color;
+}
+/*
+===============================================================================
+    GtkButton, GtkTreeViewColumn
+===============================================================================
+*/
+.button,
+column-header.button,
+column-header .button
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #fcfcfc ),
+                                                   color-stop( 0.5, #e7e7e7 ),
+                                                   color-stop( 0.5, #dddbd5 ),
+                                                   color-stop( 1,   #f3f3f3 ) );
+    border:                         1px solid #aaa;
+}
+.button:hover,
+column-header.button:hover,
+column-header .button:hover
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #ebd8b7 ),
+                                                   color-stop( 0.5, #f6ebe0 ),
+                                                   color-stop( 0.5, #edd5b4 ),
+                                                   color-stop( 1,   #f3eadb ) );
+    border:                         1px solid #c6ab84;
+}
+.button:active,
+column-header.button:active,
+column-header .button:active
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #ccb79c ),
+                                                   color-stop( 0.5, #e7decc ),
+                                                   color-stop( 0.5, #e1cfb4 ),
+                                                   color-stop( 1,   #ccc3b7 ) );
+    border:                         1px solid #967b54;
+}
+.button:insensitive,
+column-header.button:insensitive,
+column-header .button:insensitive
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #dee0e7 ),
+                                                   color-stop( 0.5, #edf0f6 ),
+                                                   color-stop( 0.5, #c6ccd5 ),
+                                                   color-stop( 1,   #eaf0f6 ) );
+    border:                         1px solid #c6ccd5;
+}
+/*
+===============================================================================
+    GtkCheckButton, GtkRadioButton, GtkCheckMenuItem, GtkRadioMenuItem
+===============================================================================
+*/
+.check,
+.radio,
+.menuitem.check,
+.menuitem.radio
+{
+    background-color:               transparent;
+    background-repeat:              no-repeat;
+    background-size:                12px 12px;
+    border-style:                   none;
+    border:                         0;
+    padding:                        0;
+}
+.check,
+.menuitem.check
+{
+    background-image:               url("../assets/checkbutton.png");
+}
+.check:active,
+.check:selected,
+.menuitem.check:active,
+.menuitem.check:selected
+{
+    background-image:               url("../assets/checkbutton-selected.png");
+}
+.radio,
+.menuitem.radio
+{
+    background-image:               url("../assets/radiobutton.png");
+}
+.radio:active,
+.radio:selected,
+.menuitem.radio:active,
+.menuitem.radio:selected
+{
+    background-image:               url("../assets/radiobutton-selected.png");
+}
+/*
+===============================================================================
+    GtkComboBox
+===============================================================================
+*/
+GtkComboBox .separator
+{
+    /* Always disable separators */
+    -GtkWidget-wide-separators:     true;
+    -GtkWidget-horizontal-separator:0;
+    -GtkWidget-vertical-separator:  0;
+}
+/*
+===============================================================================
+    GtkEntry
+===============================================================================
+*/
+.entry
+{
+    background-color:               #fff;
+    border:                         1px solid #ccc;
+    padding:                        3px;
+}
+/*
+===============================================================================
+    GtkIconView
+===============================================================================
+*/
+GtkIconView
+{
+    background-color: transparent;
+}
+GtkIconView.view.cell:selected,
+GtkIconView.view.cell:selected:focus
+{
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@theme_selected_bg_color, 1.2)),
+                                     to (shade(@theme_selected_bg_color, 1.0)));
+
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    color: @theme_selected_fg_color;
+    border-color: shade(@theme_selected_bg_color, 0.8);
+}
+.view.rubberband,
+.rubberband
+{
+    background-color: alpha(@theme_selected_bg_color, 0.3);
+    border-color: @theme_selected_bg_color;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+}
+/*
+===============================================================================
+    GtkImage
+===============================================================================
+*/
+GtkImage
+{
+    background-color:               transparent;
+}
+/*
+===============================================================================
+    GtkLabel
+===============================================================================
+*/
+GtkLabel
+{
+    background-color:               transparent;
+}
+/*
+===============================================================================
+    GtkMenu
+===============================================================================
+*/
+GtkMenu
+{
+    -GtkMenu-horizontal-padding:    0;
+    -GtkMenu-vertical-padding:      5px;
+
+    background-color:               #000;
+    background-image:               -gtk-gradient( linear, 0 0, 1 0,
+                                                   color-stop( 0,    #bababa ),
+                                                   color-stop( 0.07, #5a5a5a ),
+                                                   color-stop( 0.07, #000000 ),
+                                                   color-stop( 1,    #272727 ) );
+    border:                         1px solid #6c6c6c;
+    padding:                        0;
+    color:                          #fff;
+}
+/*
+===============================================================================
+    GtkMenuBar
+===============================================================================
+*/
+.menubar
+{
+    -GtkMenuBar-internal-padding:   3;
+    -GtkWidget-window-dragging:     true;
+
+    background-color:               transparent;
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #963c09 ),
+                                                   color-stop( 0.5, #a23f09 ),
+                                                   color-stop( 0.5, #813009 ),
+                                                   color-stop( 1,   #93390c ) );
+    border:                         1px solid #8d3909;
+    color:                          #fff;
+}
+.menuitem.menubar
+{
+    background-color:               transparent;
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #c6967e ),
+                                                   color-stop( 0.5, #9f634b ),
+                                                   color-stop( 0.5, #873c18 ),
+                                                   color-stop( 1,   #933c0f ) );
+    border:                         1px solid #8d3909;
+}
+/*
+===============================================================================
+    GtkMenuItem
+===============================================================================
+*/
+.menuitem
+{
+    background:                     url("../assets/menuitem-highlight.png");
+    background-color:               transparent;
+    background-size:                100% 100%;
+}
+.menuitem.separator
+{
+    -GtkMenuItem-horizontal-padding:3;
+
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0, #bababa ),
+                                                   color-stop( 1, #5a5a5a ) );
+    background-size:                100% 2px;
+}
+/*
+===============================================================================
+    GtkScrollbar
+===============================================================================
+*/
+.scrollbar.button
+{
+    border:                         0;
+}
+.scrollbar.button.top,
+.scrollbar.button.top:active
+{
+    border-bottom:                  1px solid #aaa;
+}
+.scrollbar.button.bottom,
+.scrollbar.button.bottom:active
+{
+    border-top:                     1px solid #aaa;
+}
+.scrollbar.button.left,
+.scrollbar.button.left:active
+{
+    border-right:                   1px solid #aaa;
+}
+.scrollbar.button.right,
+.scrollbar.button.right:active
+{
+    border-left:                    1px solid #aaa;
+}
+.slider
+{
+    border:                         1px solid #8d3909;
+}
+.slider.horizontal:hover
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #b45a0c ),
+                                                   color-stop( 0.5, #ab420c ),
+                                                   color-stop( 0.5, #8d330c ),
+                                                   color-stop( 1,   #a23c0f ) );
+}
+.slider.vertical:hover
+{
+    background-image:               -gtk-gradient( linear, 0 0, 1 0,
+                                                   color-stop( 0,   #b45a0c ),
+                                                   color-stop( 0.5, #ab420c ),
+                                                   color-stop( 0.5, #8d330c ),
+                                                   color-stop( 1,   #a23c0f ) );
+}
+.slider.horizontal
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #963c09 ),
+                                                   color-stop( 0.5, #a23f09 ),
+                                                   color-stop( 0.5, #813009 ),
+                                                   color-stop( 1,   #93390c ) );
+}
+.slider.vertical
+{
+    background-image:               -gtk-gradient( linear, 0 0, 1 0,
+                                                   color-stop( 0,   #963c09 ),
+                                                   color-stop( 0.5, #a23f09 ),
+                                                   color-stop( 0.5, #813009 ),
+                                                   color-stop( 1,   #93390c ) );
+}
+.trough
+{
+    border:                         1px solid #aaa;
+}
+.trough.horizontal
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0, #e1d8d2 ),
+                                                   color-stop( 1, #f6f6f6 ) );
+}
+.trough.vertical
+{
+    background-image:               -gtk-gradient( linear, 0 0, 1 0,
+                                                   color-stop( 0, #e1d8d2 ),
+                                                   color-stop( 1, #f6f6f6 ) );
+}
+/*
+===============================================================================
+    GtkStatusbar
+===============================================================================
+*/
+GtkStatusbar
+{
+    color:                          #000;
+    padding:                        3px;
+    border:                         1px solid #000;
+}
+/*
+===============================================================================
+    GtkToolbar
+===============================================================================
+*/
+GtkToolbar
+{
+    -GtkToolbar-internal-padding:   0;
+    -GtkWidget-window-dragging:     true;
+
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #fcfcfc ),
+                                                   color-stop( 0.5, #e7e7e7 ),
+                                                   color-stop( 0.5, #dddbd5 ),
+                                                   color-stop( 1,   #f3f3f3 ) );
+    border-style:                   none;
+    padding:                        2px;
+}
+GtkToolbar .button
+{
+    -GtkWidget-focus-line-width:    0;
+
+    background-color:               transparent;
+    border-color:                   transparent;
+    border-width:                   1px;
+    padding:                        2px;
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #f9f9f9 ),
+                                                   color-stop( 0.5, #e1dedb ),
+                                                   color-stop( 0.5, #d8d5cf ),
+                                                   color-stop( 1,   #f5f5f5 ) );
+    border:                         1px solid #d8d5cf;
+}
+GtkToolbar .button:active
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #dbd8d8 ),
+                                                   color-stop( 0.5, #c6c3c0 ),
+                                                   color-stop( 0.5, #c0bab7 ),
+                                                   color-stop( 1,   #d5d5d5 ) );
+    border:                         1px solid #c0bab7;
+}
+GtkToolbar .button:hover
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #cccccc ),
+                                                   color-stop( 0.5, #b1bdc6 ),
+                                                   color-stop( 0.5, #a8bac3 ),
+                                                   color-stop( 1,   #c6c9cc ) );
+    border:                         1px solid #a8bac3;
+}
+GtkToolbar .button:insensitive
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #eaeaea ),
+                                                   color-stop( 0.5, #cfcfcf ),
+                                                   color-stop( 0.5, #c6c6c6 ),
+                                                   color-stop( 1,   #e4e4e4 ) );
+    border:                         1px solid #c6c6c6;
+}
+/*
+===============================================================================
+    GtkTooltip
+===============================================================================
+*/
+.tooltip
+{
+    background-color:               @tooltip_bg_color;
+    color:                          @tooltip_fg_color;
+    border:                         1px solid #aaa;
+    border-radius:                  6px;
+    padding:                        3px;
+}

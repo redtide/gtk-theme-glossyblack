@@ -1,0 +1,10 @@
+[X-GNOME-Metatheme]
+Name=GlossyBlack
+GtkTheme=GlossyBlack
+MetacityTheme=GlossyBlack
+Comment=Simple and nice
+CursorTheme=DMZ-White
+CursorSize=24
+Encoding=UTF-8
+IconTheme=nuoveXT2
+Type=X-GNOME-Metatheme
