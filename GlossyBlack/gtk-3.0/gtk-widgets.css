@@ -29,9 +29,11 @@
     -GtkCheckButton-indicator-size:             14;
     -GtkCheckMenuItem-indicator-size:           14;
 
+    -GtkMenuItem-horizontal-padding:            6;
+
     -GtkPaned-handle-size:                      6;
 
-    -GtkScrolledWindow-scrollbar-spacing: 0;
+    -GtkScrolledWindow-scrollbar-spacing:       0;
     -GtkScrolledWindow-scrollbars-within-bevel: 1;
 
     -GtkWidget-link-color:                      @link_color;
@@ -40,6 +42,7 @@
     -GtkWidget-focus-line-width:                1;
     -GtkWidget-focus-padding:                   1;
 
+    /* TODO: how to have a sunken/inset border style for separators? */
     -GtkWidget-separator-height:                2;
     -GtkWidget-separator-width:                 2;
 
@@ -76,7 +79,7 @@ GtkWindow:backdrop
 *:insensitive
 {
     color:          shade( @bg_color, 0.6 );
-    text-shadow:    0 1 alpha( shade( @bg_color, 1.25 ), 0.5 );
+    text-shadow:    0px 1px alpha( shade( @bg_color, 1.25 ), 0.5 );
 }
 *:active
 {
@@ -236,7 +239,6 @@ GtkIconView.view.cell:selected:focus
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@theme_selected_bg_color, 1.2)),
                                      to (shade(@theme_selected_bg_color, 1.0)));
-
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
@@ -278,7 +280,7 @@ GtkLabel
 GtkMenu
 {
     -GtkMenu-horizontal-padding:    0;
-    -GtkMenu-vertical-padding:      5px;
+    -GtkMenu-vertical-padding:      5;
 
     background-color:               #000;
     background-image:               -gtk-gradient( linear, 0 0, 1 0,
@@ -297,21 +299,17 @@ GtkMenu
 */
 .menubar
 {
-    -GtkMenuBar-internal-padding:   3;
-    -GtkWidget-window-dragging:     true;
-
-    background-color:               transparent;
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
                                                    color-stop( 0,   #963c09 ),
                                                    color-stop( 0.5, #a23f09 ),
                                                    color-stop( 0.5, #813009 ),
                                                    color-stop( 1,   #93390c ) );
-    border:                         1px solid #8d3909;
+    border:                         1px solid #000;
     color:                          #fff;
+    padding:                        0px;
 }
-.menuitem.menubar
+.menubar.menuitem
 {
-    background-color:               transparent;
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
                                                    color-stop( 0,   #c6967e ),
                                                    color-stop( 0.5, #9f634b ),
@@ -326,18 +324,14 @@ GtkMenu
 */
 .menuitem
 {
-    background:                     url("../assets/menuitem-highlight.png");
+    background:                     url("../assets/panelbutton-prelight.png");
     background-color:               transparent;
     background-size:                100% 100%;
+    padding:                        3px;
 }
-.menuitem.separator
+.separator
 {
-    -GtkMenuItem-horizontal-padding:3;
-
-    background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0, #bababa ),
-                                                   color-stop( 1, #5a5a5a ) );
-    background-size:                100% 2px;
+    color:                          #aaa;
 }
 /*
 ===============================================================================
@@ -436,7 +430,7 @@ GtkStatusbar
     GtkToolbar
 ===============================================================================
 */
-GtkToolbar
+.toolbar
 {
     -GtkToolbar-internal-padding:   0;
     -GtkWidget-window-dragging:     true;
@@ -449,7 +443,7 @@ GtkToolbar
     border-style:                   none;
     padding:                        2px;
 }
-GtkToolbar .button
+.toolbar .button
 {
     -GtkWidget-focus-line-width:    0;
 
@@ -464,16 +458,7 @@ GtkToolbar .button
                                                    color-stop( 1,   #f5f5f5 ) );
     border:                         1px solid #d8d5cf;
 }
-GtkToolbar .button:active
-{
-    background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #dbd8d8 ),
-                                                   color-stop( 0.5, #c6c3c0 ),
-                                                   color-stop( 0.5, #c0bab7 ),
-                                                   color-stop( 1,   #d5d5d5 ) );
-    border:                         1px solid #c0bab7;
-}
-GtkToolbar .button:hover
+.toolbar .button:hover
 {
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
                                                    color-stop( 0,   #cccccc ),
@@ -482,7 +467,16 @@ GtkToolbar .button:hover
                                                    color-stop( 1,   #c6c9cc ) );
     border:                         1px solid #a8bac3;
 }
-GtkToolbar .button:insensitive
+.toolbar .button:active
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #dbd8d8 ),
+                                                   color-stop( 0.5, #c6c3c0 ),
+                                                   color-stop( 0.5, #c0bab7 ),
+                                                   color-stop( 1,   #d5d5d5 ) );
+    border:                         1px solid #c0bab7;
+}
+.toolbar .button:insensitive
 {
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
                                                    color-stop( 0,   #eaeaea ),

@@ -320,7 +320,7 @@ style "combobox" = "default"
             function    = BOX
             recolorable = TRUE
             state       = NORMAL
-            file        = "../assets/button-normal-panel.png"
+            file        = "../assets/combobox.png"
             border      = { 8, 8, 8, 8 }
             stretch     = TRUE
         }
@@ -504,7 +504,7 @@ style "menuitem" = "default"
         {
             function    = BOX
             recolorable = TRUE
-            file        = "../assets/menuitem-highlight.png"
+            file        = "../assets/panelbutton-prelight.png"
             border      = { 3, 3, 3, 3 }
             stretch     = TRUE
         }

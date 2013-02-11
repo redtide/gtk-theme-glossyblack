@@ -33,10 +33,9 @@
 
 <frame_geometry name="maximized" parent="normal" rounded_top_left="false"
                                                  rounded_top_right="false">
-
-    <distance name="left_width"         value="0"/>
-    <distance name="right_width"        value="0"/>
-    <distance name="bottom_height"      value="0"/>
+    <distance name="left_width"    value="1"/>
+    <distance name="right_width"   value="1"/>
+    <distance name="bottom_height" value="1"/>
 </frame_geometry>
 <!--
  ==============================================================================
@@ -58,7 +57,7 @@
 </draw_ops>
 <!--
  ==============================================================================
-    Title
+    Title bar
  ==============================================================================
 -->
 <draw_ops name="titlebar-focused">
@@ -317,9 +316,11 @@
 
 <frame_style name="max-focused" geometry="maximized">
     <piece position="titlebar"                   draw_ops="titlebar-focused"/>
+    <piece position="title"                      draw_ops="title-focused"/>
+
     <piece position="left_edge"                  draw_ops="frame-left-focused"/>
     <piece position="right_edge"                 draw_ops="frame-right-focused"/>
-    <piece position="title"                      draw_ops="title-focused"/>
+    <piece position="bottom_edge"                draw_ops="frame-bottom-focused"/>
 
     <button function="close"    state="normal"   draw_ops="button-close-focused"/>
     <button function="close"    state="pressed"  draw_ops="button-close-pressed"/>
@@ -340,9 +341,11 @@
 
 <frame_style name="max-unfocused" geometry="maximized">
     <piece position="titlebar"                   draw_ops="titlebar-unfocused"/>
-    <piece position="left_edge"                  draw_ops="frame-left-focused"/>
-    <piece position="right_edge"                 draw_ops="frame-right-focused"/>
     <piece position="title"                      draw_ops="title-unfocused"/>
+
+    <piece position="left_edge"                  draw_ops="frame-left-unfocused"/>
+    <piece position="right_edge"                 draw_ops="frame-right-unfocused"/>
+    <piece position="bottom_edge"                draw_ops="frame-bottom-unfocused"/>
 
     <button function="close"    state="normal"   draw_ops="button-close-unfocused"/>
     <button function="close"    state="pressed"  draw_ops="button-close-pressed"/>
