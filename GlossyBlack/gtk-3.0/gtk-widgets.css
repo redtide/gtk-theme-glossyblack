@@ -180,26 +180,28 @@ column-header .button:insensitive
 .check,
 .menuitem.check
 {
-    background-image:               url("../assets/checkbutton.png");
+    background-color:               #fff;
+    border:                         1px solid #aaa;
 }
 .check:active,
 .check:selected,
 .menuitem.check:active,
 .menuitem.check:selected
 {
-    background-image:               url("../assets/checkbutton-selected.png");
+
 }
 .radio,
 .menuitem.radio
 {
-    background-image:               url("../assets/radiobutton.png");
+    background-color:               #fff;
+    border:                         1px solid #aaa;
 }
 .radio:active,
 .radio:selected,
 .menuitem.radio:active,
 .menuitem.radio:selected
 {
-    background-image:               url("../assets/radiobutton-selected.png");
+
 }
 /*
 ===============================================================================
@@ -297,25 +299,20 @@ GtkMenu
     GtkMenuBar
 ===============================================================================
 */
+.menubar,
+.slider.horizontal
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #b41e1e ),
+                                                   color-stop( 0.5, #961515 ),
+                                                   color-stop( 0.5, #780c0c ),
+                                                   color-stop( 1,   #990202 ) );
+}
 .menubar
 {
-    background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #963c09 ),
-                                                   color-stop( 0.5, #a23f09 ),
-                                                   color-stop( 0.5, #813009 ),
-                                                   color-stop( 1,   #93390c ) );
-    border:                         1px solid #000;
+    border-bottom:                  1px solid #000;
     color:                          #fff;
     padding:                        0px;
-}
-.menubar.menuitem
-{
-    background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #c6967e ),
-                                                   color-stop( 0.5, #9f634b ),
-                                                   color-stop( 0.5, #873c18 ),
-                                                   color-stop( 1,   #933c0f ) );
-    border:                         1px solid #8d3909;
 }
 /*
 ===============================================================================
@@ -324,14 +321,34 @@ GtkMenu
 */
 .menuitem
 {
-    background:                     url("../assets/panelbutton-prelight.png");
-    background-color:               transparent;
-    background-size:                100% 100%;
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #ff5a00 ),
+                                                   color-stop( 0.5, #ff3c00 ),
+                                                   color-stop( 0.5, #f02d00 ),
+                                                   color-stop( 1,   #f03c00 ) );
     padding:                        3px;
 }
 .separator
 {
     color:                          #aaa;
+}
+
+.notebook
+{
+    border:                         1px solid #aaa;
+    border-radius:                  3px;
+}
+.notebook tab
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #fcfcfc ),
+                                                   color-stop( 0.5, #e7e7e7 ),
+                                                   color-stop( 0.5, #dddbd5 ),
+                                                   color-stop( 1,   #f3f3f3 ) );
+}
+.notebook tab.top
+{
+    border-bottom:                  0;
 }
 /*
 ===============================================================================
@@ -365,38 +382,32 @@ GtkMenu
 .slider
 {
     border:                         1px solid #8d3909;
+    color:                          #fff;
+    padding:                        0px;
 }
 .slider.horizontal:hover
 {
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #b45a0c ),
-                                                   color-stop( 0.5, #ab420c ),
-                                                   color-stop( 0.5, #8d330c ),
-                                                   color-stop( 1,   #a23c0f ) );
+                                                   color-stop( 0,   #d22d2d ),
+                                                   color-stop( 0.5, #b41e1e ),
+                                                   color-stop( 0.5, #960f0f ),
+                                                   color-stop( 1,   #ac0606 ) );
 }
 .slider.vertical:hover
 {
     background-image:               -gtk-gradient( linear, 0 0, 1 0,
-                                                   color-stop( 0,   #b45a0c ),
-                                                   color-stop( 0.5, #ab420c ),
-                                                   color-stop( 0.5, #8d330c ),
-                                                   color-stop( 1,   #a23c0f ) );
-}
-.slider.horizontal
-{
-    background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #963c09 ),
-                                                   color-stop( 0.5, #a23f09 ),
-                                                   color-stop( 0.5, #813009 ),
-                                                   color-stop( 1,   #93390c ) );
+                                                   color-stop( 0,   #d22d2d ),
+                                                   color-stop( 0.5, #b41e1e ),
+                                                   color-stop( 0.5, #960f0f ),
+                                                   color-stop( 1,   #ac0606 ) );
 }
 .slider.vertical
 {
     background-image:               -gtk-gradient( linear, 0 0, 1 0,
-                                                   color-stop( 0,   #963c09 ),
-                                                   color-stop( 0.5, #a23f09 ),
-                                                   color-stop( 0.5, #813009 ),
-                                                   color-stop( 1,   #93390c ) );
+                                                   color-stop( 0,   #b41e1e ),
+                                                   color-stop( 0.5, #961515 ),
+                                                   color-stop( 0.5, #780c0c ),
+                                                   color-stop( 1,   #990202 ) );
 }
 .trough
 {
@@ -413,6 +424,17 @@ GtkMenu
     background-image:               -gtk-gradient( linear, 0 0, 1 0,
                                                    color-stop( 0, #e1d8d2 ),
                                                    color-stop( 1, #f6f6f6 ) );
+}
+
+.sidebar,
+.sidebar.view,
+.sidebar .view
+{
+    background-color:               #fff;
+}
+.sidebar .frame
+{
+    border-width:                   0;
 }
 /*
 ===============================================================================

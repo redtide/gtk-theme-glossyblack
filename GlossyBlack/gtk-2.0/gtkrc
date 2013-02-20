@@ -10,7 +10,7 @@
 # =============================================================================
 
 gtk-auto-mnemonics = 1
-gtk_color_scheme   = "fg_color:#000000\nbg_color:#F0F0F0\nbase_color:#FFFFFF\ntext_color:#000000\nselected_bg_color:#FF7800\nselected_fg_color:#000000\ntooltip_bg_color:#FFFCDB\ntooltip_fg_color:#000000"
+gtk_color_scheme   = "fg_color:#000000\nbg_color:#f0f0f0\nbase_color:#ffffff\ntext_color:#000000\nselected_bg_color:#FF7800\nselected_fg_color:#000000\ntooltip_bg_color:#FFFCDB\ntooltip_fg_color:#000000"
 gtk-icon-sizes     = "panel-menu=22,22:gtk-button=16,16"
 
 # =============================================================================
@@ -28,9 +28,9 @@ style "default"
     base[SELECTED]    = "#9F9E9C"
 
     bg[ACTIVE]        = "#E1D9D1"
-    bg[INSENSITIVE]   = "#EBE7E3"
+    bg[INSENSITIVE]   = "#dddbd5"
     bg[NORMAL]        = @bg_color
-    bg[PRELIGHT]      = "#f5f3f0"
+    bg[PRELIGHT]      = "#F0D2B4"
     bg[SELECTED]      = @selected_bg_color
 
     fg[ACTIVE]        = "#000000"
@@ -45,20 +45,61 @@ style "default"
     text[PRELIGHT]    = @selected_fg_color
     text[SELECTED]    = @selected_fg_color
 
+    GtkCheckButton::indicator_size = 15
+
+    GtkExpander::expander_size     = 13
+
+    GtkMenuBar::internal-padding   = 0
+
+    GtkPaned::handle_size          = 6
+
     engine "murrine"
     {
-        contrast          = 0.6
-        focusstyle        = 1
-        glazestyle        = 0
-        glow_shade        = 2.0
-        glowstyle         = 3
-        highlight_shade   = 1.3
-        lightborder_shade = 2.0
-        lightborderstyle  = 1
-        roundness         = 3
-        separatorstyle    = 0
-        sliderstyle       = 1
-        stepperstyle      = 1
+        border_shades       = { 1.0, 1.0 }
+        glow_shade          = 2.0
+        gradient_shades     = { 1.2, 1.0, 1.0, 1.2 }
+        highlight_shade     = 1.2
+        lightborder_shade   = 2.0
+        prelight_shade      = 1.2
+        shadow_shades       = { 0.8, 2.2 }
+        text_shade          = 1.0
+        trough_shades       = { 1.0, 1.0 }
+
+        border_colors       = FALSE # { "#aaa", "#000" }
+        contrast            = 0.5
+        focus_color         = "#aaa"
+#       gradient_colors             Used per widget if needed
+        roundness           = 0
+
+        focusstyle          = 1
+        glazestyle          = 0
+        glowstyle           = 3
+        lightborderstyle    = 1
+        reliefstyle         = 3
+#       textstyle           = 1
+
+        animation           = FALSE
+        colorize_scrollbar  = FALSE
+#       disable_focus       = FALSE
+        rgba                = TRUE
+
+        arrowstyle          = 0
+        cellstyle           = 1
+        comboboxstyle       = 0
+        expanderstyle       = 2
+        handlestyle         = 0
+        listviewstyle       = 2
+        listviewheaderstyle = 2
+        menubarstyle        = 1
+        menustyle           = 1
+        menubaritemstyle    = 0
+        progressbarstyle    = 0
+        scrollbarstyle      = 2
+        separatorstyle      = 1
+        sliderstyle         = 1
+        spinbuttonstyle     = 1
+        stepperstyle        = 2
+        toolbarstyle        = 1
     }
 }
 
@@ -67,299 +108,28 @@ class "GtkWidget" style "default"
 # =============================================================================
 # Misc styles
 # =============================================================================
-style "wide"
+style "wide" = "default"
 {
     xthickness = 2
     ythickness = 2
 }
 
-style "wider"
+style "wider" = "default"
 {
     xthickness = 3
     ythickness = 3
 }
-
-# -----------------------------------------------------------------------------
-# Evolution Hack
-# -----------------------------------------------------------------------------
-style "evolution-hack"
-{
-    bg[ACTIVE]   = "#C6C6C6"
-    bg[SELECTED] = "#FFAC6C" # "#ABDDF8"
-    fg[ACTIVE]   = "#353535"
-    fg[SELECTED] = "#353535"
-}
-
-widget_class "*GtkCList*" style "evolution-hack"
-widget_class "*GtkList*"  style "evolution-hack"
-widget_class "*GtkCTree*" style "evolution-hack"
-widget_class "*.ETree.*"  style "evolution-hack"
-
-# -----------------------------------------------------------------------------
-# Metacity
-# -----------------------------------------------------------------------------
-style "metacity-frame" = "default"
-{
-    bg[ACTIVE]   = "#EBEBEB"
-    bg[SELECTED] = "#532500" # "#5f1900" "#ABDDF8"
-    fg[SELECTED] = "#FFFFFF" # Focused title text color
-}
-
-class "GtkWindow"  style "metacity-frame"
-class "MetaFrames" style "metacity-frame"
-
-# -----------------------------------------------------------------------------
-# Nautilus desktop icons font color
-# -----------------------------------------------------------------------------
-style "desktop-icon"
-{
-    NautilusIconContainer::frame_text   = 0
-    NautilusIconContainer::normal_alpha = 100
-
-    base[NORMAL] = "#EBEBEB" # Background for renaming folders, files, etc.
-    text[NORMAL] = "#FFFFFF"
-}
-
-widget_class "*DesktopIcon*" style "desktop-icon"
-
-# -----------------------------------------------------------------------------
-# Nautilus search stripe and other specialties (TEST)
-# -----------------------------------------------------------------------------
-style "extra-view"
-{
-    bg[NORMAL] = "#C6C6C6"
-#   font = "Sans 6"
-}
-
-widget "*.nautilus-extra-view-widget" style:highest "extra-view"
-
-# -----------------------------------------------------------------------------
-# Task List
-# -----------------------------------------------------------------------------
-style "tasklist" = "default"
-{
-    xthickness = 5
-    ythickness = 3
-
-#   bg[ACTIVE] = "#000000"
-}
-
-widget_class "*.tooltips.*.GtkToggleButton" style "tasklist"
-
-# -----------------------------------------------------------------------------
-# ???
-# -----------------------------------------------------------------------------
-style "shell-highlight" = "default"
-{
-}
-
-style "slab" = "default"
-{
-    bg[ACTIVE]      = "#E9EEF5" # Right side bg color
-    bg[NORMAL]      = "#FDFBF7" # Base bg color
-    bg[SELECTED]    = "#84B0DA" # Outline
-    fg[INSENSITIVE] = "#5C8DBF" # Right side caption text color
-    fg[NORMAL]      = "#6A97C5" # Left side caption text color
-}
-
-style "t-range" = "default"
-{
-    xthickness = 3
-    ythickness = 3
-
-    bg[NORMAL] = "#F0F0F0"
-}
-
-# =============================================================================
-# Widget styles
-# =============================================================================
-
-# =============================================================================
-# GtkButton
-# =============================================================================
-style "button"
-{
-    GtkButton::child-displacement-x = 0
-    GtkButton::child-displacement-y = 0
-    GtkButton::default_border       = { 0, 0, 0, 0 }
-
-    engine "pixmap"
-    {
-        image
-        {
-            function    = BOX
-            detail      = "buttondefault"
-            recolorable = TRUE
-            file        = "../assets/button-default.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = ACTIVE
-            file        = "../assets/button-pressed.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = INSENSITIVE
-            file        = "../assets/button-insensitive.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = NORMAL
-            file        = "../assets/button-normal.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = PRELIGHT
-            recolorable = TRUE
-            file        = "../assets/button-prelight.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-    }
-}
-
-class "GtkButton"       style "button"
-class "GtkToggleButton" style "button"
 
 # =============================================================================
 # GtkCheckButton
 # =============================================================================
-style "checkbutton"
+style "checkbutton" = "default"
 {
-    GtkCheckButton::indicator_size = 14
-
-    engine "pixmap"
-    {
-        image
-        {
-            function        = CHECK
-            shadow          = OUT
-            recolorable     = TRUE
-            overlay_file    = "../assets/checkbutton.png"
-            overlay_border  = { 0, 0, 0, 0 }
-            overlay_stretch = FALSE
-        }
-        image
-        {
-            function        = CHECK
-            shadow          = IN
-            recolorable     = TRUE
-            overlay_file    = "../assets/checkbutton-selected.png"
-            overlay_border  = { 0, 0, 0, 0 }
-            overlay_stretch = FALSE
-        }
-        image
-        {
-            function        = CHECK
-            shadow          = ETCHED_IN
-            recolorable     = TRUE
-            overlay_file    = "../assets/checkbutton-mixed.png"
-            overlay_border  = { 0, 0, 0, 0 }
-            overlay_stretch = FALSE
-        }
-    }
+    bg[SELECTED] = "#fff"
 }
 
 class "GtkCheckButton"   style "checkbutton"
 class "GtkCheckMenuItem" style "checkbutton"
-
-# =============================================================================
-# GtkComboBox
-# =============================================================================
-style "combobox" = "default"
-{
-    xthickness = 3
-    ythickness = 3
-
-    bg[ACTIVE]        = "#DEDEDE"
-    bg[INSENSITIVE]   = "#EEEEEE"
-    bg[NORMAL]        = "#DEDEDE"
-    bg[PRELIGHT]      = "#FFAC6C"
-    bg[SELECTED]      = "#FFAC6C"
-    fg[PRELIGHT]      = "#FFFFFF"
-    text[ACTIVE]      = "#000000"
-    text[INSENSITIVE] = "#9B9B9B"
-    text[NORMAL]      = "#353535"
-    text[PRELIGHT]    = "#000000"
-    text[SELECTED]    = "#FFFFFF"
-
-    engine "pixmap"
-    {
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            state       = ACTIVE
-            file        = "../assets/button-normal.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            state       = INSENSITIVE
-            file        = "../assets/button-insensitive.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            state       = NORMAL
-            file        = "../assets/combobox.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            state       = PRELIGHT
-            file        = "../assets/button-prelight.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            state       = SELECTED
-            file        = "../assets/button-normal.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = VLINE
-            recolorable = TRUE
-            file        = "../assets/button-null.png"
-            stretch     = TRUE
-        }
-    }
-}
-
-# ???
-style "comboboxentry" = "button"
-{
-}
-
-class "GtkComboBox"   style "combobox"
-class "GtkOptionMenu" style "combobox"
-widget "*combo*"      style "combobox"
 
 # =============================================================================
 # GtkEntry
@@ -367,45 +137,21 @@ widget "*combo*"      style "combobox"
 class "GtkEntry" style "wider"
 
 # =============================================================================
-# GtkExpander
-# =============================================================================
-style "expander"
-{
-    GtkExpander::expander_size = 16
-
-    engine "murrine"
-    {
-        expanderstyle = 2
-    }
-}
-
-class "GtkExpander" style "expander"
-
-# =============================================================================
 # GtkFrame (StaticBox)
 # =============================================================================
 style "frame-title" = "default"
 {
-    fg[NORMAL] = "#404040"
+    fg[NORMAL] = "#777"
 }
 
-class "GtkFrame"                   style "wide"
 widget_class "*.GtkFrame.GtkLabel" style "frame-title"
 
 # =============================================================================
 # GtkMenu
 # =============================================================================
-style "menu" = "default"
+style "menu" = "wide"
 {
-#   PanelMenu::gradient_bg        = 1
-#   PanelMenu::stripe-color       = { 0.24, 0.44, 0.66 }
-#   PanelMenu::stripe-color-light = { 0.54, 0.74, 0.96 }
-
-    xthickness = 3
-    ythickness = 2
-
-    bg[NORMAL]   = "#353535"
-    bg[SELECTED] = "#8EC7E6"
+    bg[NORMAL] = "#000"
 
     engine "pixmap"
     {
@@ -428,50 +174,8 @@ class "GtkMenu" style "menu"
 # =============================================================================
 style "menubar" = "wide"
 {
-    GtkMenuBar::internal-padding = 0
-#   GtkMenuBar::shadow-type      = GTK_SHADOW_OUT
-
-    fg[ACTIVE]    = "#FFFFFF"
-    fg[NORMAL]    = "#FFFFFF"
-    fg[PRELIGHT]  = "#FFFFFF"
-    text[NORMAL]  = "#FFFFFF"
-
-    engine "pixmap"
-    {
-        image
-        {
-            function    = BOX
-            state       = ACTIVE
-            file        = "../assets/menubar.png"
-            border      = { 2, 2, 2, 2 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = INSENSITIVE
-            file        = "../assets/menubar-inactive.png"
-            border      = { 2, 2, 2, 2 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = NORMAL
-            file        = "../assets/menubar.png"
-            border      = { 2, 2, 2, 2 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            state       = PRELIGHT
-            file        = "../assets/menubar-item.png"
-            border      = { 10, 10, 10, 10 }
-            stretch     = TRUE
-        }
-    }
+    bg[NORMAL]   = "#780c0c"
+    fg[NORMAL]   = @base_color
 }
 
 class "*MenuBar*"                    style "menubar"
@@ -481,34 +185,11 @@ widget_class "Nautilus*.GtkMenuBar*" style "menubar"
 # =============================================================================
 # GtkMenuItem
 # =============================================================================
-style "menuitem" = "default"
+style "menuitem"
 {
-    xthickness = 2
-    ythickness = 2
-
-    base[NORMAL]    = "#FFFFFF"
-    base[PRELIGHT]  = "#353535"
-    bg[NORMAL]      = "#414141"
-#   bg[SELECTED]    = "#9AD2F0"
-    fg[ACTIVE]      = "#EBEBEB"
-    fg[INSENSITIVE] = "#6B6B6B"
-    fg[NORMAL]      = "#FFFFFF"
-    fg[PRELIGHT]    = "#FFFFFF"
-    fg[SELECTED]    = "#EBEBEB"
-    text[NORMAL]    = "#FFFFFF"
-    text[PRELIGHT]  = "#FFFFFF"
-
-    engine "pixmap"
-    {
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            file        = "../assets/panelbutton-prelight.png"
-            border      = { 3, 3, 3, 3 }
-            stretch     = TRUE
-        }
-    }
+    bg[SELECTED]    = @selected_bg_color
+    fg[NORMAL]      = @base_color
+    fg[PRELIGHT]    = @fg_color
 }
 
 class "GtkMenuItem"        style "menuitem"
@@ -519,11 +200,15 @@ widget_class "*MenuItem.*" style "menuitem"
 # =============================================================================
 # GtkNotebook
 # =============================================================================
-style "notebook" = "wide"
+style "notebook" = "default"
 {
-    bg[INSENSITIVE] = "#EEEEEE"
-    bg[NORMAL]      = "#F0F0F0"
+    bg[NORMAL]      = @bg_color
     bg[SELECTED]    = "#FFAC6C"
+
+    engine "murrine"
+    {
+        roundness = 3
+    }
 }
 
 class "GtkNotebook"                        style "notebook"
@@ -531,67 +216,14 @@ widget_class "*.GtkNotebook.*.GtkEventBox" style "notebook"
 widget_class "*.GtkNotebook.*.GtkViewport" style "notebook"
 
 # =============================================================================
-# GtkPaned
-# =============================================================================
-style "paned"
-{
-    GtkPaned::handle_size = 6
-
-#   bg[NORMAL] = "#232323"
-}
-
-class "GtkPaned" style "paned"
-
-# =============================================================================
 # GtkProgressBar
 # =============================================================================
-style "progressbar"
+style "progressbar" = "default"
 {
-    xthickness = 1
-    ythickness = 1
+    xthickness = 0
+    ythickness = 0
 
-    fg[PRELIGHT]   = "#FFFFFF"
-    text[PRELIGHT] = "#FFFFFF"
-
-    engine "pixmap"
-    {
-        image
-        {
-            function    = BOX
-            detail      = "bar"
-            file        = "../assets/progressbar-horizontal.png"
-            border      = { 2, 2, 2, 2 }
-            stretch     = TRUE
-            orientation = HORIZONTAL
-        }
-        image
-        {
-            function    = BOX
-            detail      = "trough"
-            file        = "../assets/progressbar-horizontal-trough.png"
-            border      = { 2, 2, 2, 2 }
-            stretch     = TRUE
-            orientation = HORIZONTAL
-        }
-        image
-        {
-            function    = BOX
-            detail      = "bar"
-            file        = "../assets/progressbar-vertical.png"
-            border      = { 2, 2, 2, 2 }
-            stretch     = TRUE
-            orientation = VERTICAL
-        }
-        image
-        {
-            function    = BOX
-            detail      = "trough"
-            file        = "../assets/progressbar-vertical-trough.png"
-            border      = { 2, 2, 2, 2 }
-            stretch     = TRUE
-            orientation = VERTICAL
-        }
-    }
+    bg[SELECTED] = @selected_bg_color
 }
 
 class "GtkProgress"    style "progressbar"
@@ -600,587 +232,23 @@ class "GtkProgressBar" style "progressbar"
 # =============================================================================
 # GtkRadioButton
 # =============================================================================
-style "radiobutton"
-{
-    engine "pixmap"
-    {
-        image
-        {
-            function        = OPTION
-            shadow          = ETCHED_IN
-            recolorable     = TRUE
-            overlay_file    = "../assets/radiobutton-mixed.png"
-#           overlay_border  = { 0, 0, 0, 0 }
-            overlay_stretch = FALSE
-        }
-        image
-        {
-            function        = OPTION
-            shadow          = IN
-            recolorable     = TRUE
-            overlay_file    = "../assets/radiobutton-selected.png"
-#           overlay_border  = { 0, 0, 0, 0 }
-            overlay_stretch = FALSE
-        }
-        image
-        {
-            function        = OPTION
-            shadow          = OUT
-            recolorable     = TRUE
-            overlay_file    = "../assets/radiobutton.png"
-#           overlay_border  = { 0, 0, 0, 0 }
-            overlay_stretch = FALSE
-        }
-    }
-}
-
-# ???
-style "radiocheck" = "default"
-{
-    bg[SELECTED] = "#9AD2F0"
-    base[NORMAL] = "#FFFFFF"
-}
-
-class "GtkRadioButton"   style "radiobutton"
-class "GtkRadioMenuItem" style "radiobutton"
-
-# =============================================================================
-# GtkRange: Base class for GtkScale (Slider) and GtkScrollBar
-# =============================================================================
-style "range" = "default"
-{
-    GtkRange::slider_width   = 15
-    GtkRange::stepper_size   = 15
-    GtkRange::trough_border  = 1
-
-    GtkScale::slider-length  = 31
-    GtkHScale::slider_length = 18
-    GtkHScale::slider_width  = 21
-    GtkVScale::slider_length = 18
-    GtkVScale::slider_width  = 21
-
-    engine "pixmap"
-    {
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            detail      = "trough"
-            file        = "../assets/scale-horizontal-trough.png"
-            border      = { 10, 10, 1, 19 }
-            stretch     = TRUE
-            orientation = HORIZONTAL
-        }
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            detail      = "trough"
-            file        = "../assets/scale-vertical-trough.png"
-            border      = { 0, 19, 10, 10 }
-            stretch     = TRUE
-            orientation = VERTICAL
-        }
-# -----------------------------------------------------------------------------
-# Slider (Horizontal)
-# -----------------------------------------------------------------------------
-        image
-        {
-            function        = SLIDER
-            recolorable     = TRUE
-            state           = NORMAL
-            file            = "../assets/scale-slider-null.png"
-            border          = { 0, 0, 0, 0 }
-            stretch         = TRUE
-            overlay_file    = "../assets/scale-horizontal-slider.png"
-            overlay_stretch = FALSE
-            orientation     = HORIZONTAL
-        }
-        image
-        {
-            function        = SLIDER
-            recolorable     = TRUE
-            state           = PRELIGHT
-            file            = "../assets/scale-slider-null.png"
-            border          = { 0, 0, 0, 0 }
-            stretch         = TRUE
-            overlay_file    = "../assets/scale-horizontal-slider-prelight.png"
-            overlay_stretch = FALSE
-            orientation     = HORIZONTAL
-        }
-        image
-        {
-            function        = SLIDER
-            recolorable     = TRUE
-            state           = INSENSITIVE
-            file            = "../assets/scale-slider-null.png"
-            border          = { 0, 0, 0, 0 }
-            stretch         = TRUE
-            overlay_file    = "../assets/scale-horizontal-slider.png"
-            overlay_stretch = FALSE
-            orientation     = HORIZONTAL
-        }
-# -----------------------------------------------------------------------------
-# Slider (Vertical)
-# -----------------------------------------------------------------------------
-        image
-        {
-            function        = SLIDER
-            recolorable     = TRUE
-            state           = NORMAL
-            file            = "../assets/scale-slider-null.png"
-            border          = { 0, 0, 0, 0 }
-            stretch         = TRUE
-            overlay_file    = "../assets/scale-vertical-slider.png"
-            overlay_stretch = FALSE
-            orientation     = VERTICAL
-        }
-        image
-        {
-            function        = SLIDER
-            recolorable     = TRUE
-            state           = PRELIGHT
-            file            = "../assets/scale-slider-null.png"
-            border          = { 0, 0, 0, 0 }
-            stretch         = TRUE
-            overlay_file    = "../assets/scale-vertical-slider-prelight.png"
-            overlay_stretch = FALSE
-            orientation     = VERTICAL
-        }
-        image
-        {
-            function        = SLIDER
-            recolorable     = TRUE
-            state           = INSENSITIVE
-            file            = "../assets/scale-slider-null.png"
-            border          = { 0, 0, 0, 0 }
-            stretch         = TRUE
-            overlay_file    = "../assets/scale-vertical-slider.png"
-            overlay_stretch = FALSE
-            orientation     = VERTICAL
-        }
-    }
-}
-
-# ???
-style "scale" = "wider"
-{
-    bg[PRELIGHT] = "#9AD2F0"
-    bg[SELECTED] = "#ffac6c" #"#ABDDF8" #"#CEEEFF" #"#ABDDF8"
-}
-
-class "GtkRange" style "range"
-class "GtkScale" style "range"
-
-# =============================================================================
-# GtkScrollbar
-# =============================================================================
-style "scrollbar"
-{
-#   GtkScrollbar::has-secondary-backward-stepper = 1
-#   GtkScrollbar::has-secondary-forward-stepper  = 1
-    GtkScrollbar::min_slider_length              = 35
-
-    engine "pixmap"
-    {
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            detail      = "trough"
-            file        = "../assets/scrollbar-horizontal-trough.png"
-            border      = { 4, 4, 4, 4 }
-            stretch     = TRUE
-            orientation = HORIZONTAL
-        }
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            detail      = "trough"
-            file        = "../assets/scrollbar-vertical-trough.png"
-            border      = { 4, 4, 4, 4 }
-            stretch     = TRUE
-            orientation = VERTICAL
-        }
-        image
-        {
-            function    = SLIDER
-            recolorable = TRUE
-            state       = NORMAL
-            file        = "../assets/scrollbar-horizontal-slider.png"
-            border      = { 4, 4, 4, 4 }
-            stretch     = TRUE
-            orientation = HORIZONTAL
-
-            overlay_file    = "../assets/scrollbar-horizontal-thumb.png"
-            overlay_stretch = FALSE
-            orientation     = HORIZONTAL
-        }
-        image
-        {
-            function    = SLIDER
-            recolorable = TRUE
-            state       = PRELIGHT
-            file        = "../assets/scrollbar-horizontal-slider-prelight.png"
-            border      = { 4, 4, 4, 4 }
-            stretch     = TRUE
-            orientation = HORIZONTAL
-
-            overlay_file    = "../assets/scrollbar-horizontal-thumb-prelight.png"
-            overlay_stretch = FALSE
-            orientation     = HORIZONTAL
-        }
-        image
-        {
-            function    = SLIDER
-            recolorable = TRUE
-            state       = INSENSITIVE
-            file        = "../assets/scrollbar-horizontal-slider-insensitive.png"
-            border      = { 4, 4, 4, 4 }
-            stretch     = TRUE
-            orientation = HORIZONTAL
-
-            overlay_file    = "../assets/scrollbar-horizontal-thumb.png"
-            overlay_stretch = FALSE
-            orientation     = HORIZONTAL
-        }
-        image
-        {
-            function    = SLIDER
-            recolorable = TRUE
-            state       = NORMAL
-            file        = "../assets/scrollbar-vertical-slider.png"
-            border      = { 4, 4, 4, 4 }
-            stretch     = TRUE
-            orientation = VERTICAL
-
-            overlay_file    = "../assets/scrollbar-vertical-thumb.png"
-            overlay_stretch = FALSE
-            orientation     = VERTICAL
-        }
-        image
-        {
-            function    = SLIDER
-            recolorable = TRUE
-            state       = PRELIGHT
-            file        = "../assets/scrollbar-vertical-slider-prelight.png"
-            border      = { 4, 4, 4, 4 }
-            stretch     = TRUE
-            orientation = VERTICAL
-
-            overlay_file    = "../assets/scrollbar-vertical-thumb-prelight.png"
-            overlay_stretch = FALSE
-            orientation     = VERTICAL
-        }
-        image
-        {
-            function    = SLIDER
-            recolorable = TRUE
-            state       = INSENSITIVE
-            file        = "../assets/scrollbar-vertical-slider-insensitive.png"
-            border      = { 4, 4, 4, 4 }
-            stretch     = TRUE
-            orientation = VERTICAL
-
-            overlay_file    = "../assets/scrollbar-vertical-thumb.png"
-            overlay_stretch = FALSE
-            orientation     = VERTICAL
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = NORMAL
-            file            = "../assets/scrollbar-vertical-stepper-up.png"
-            border          = { 12, 1, 0, 9 }
-            stretch         = TRUE
-            arrow_direction = UP
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = INSENSITIVE
-            file            = "../assets/scrollbar-vertical-stepper-up-insensitive.png"
-            border          = { 12, 1, 0, 9 }
-            stretch         = TRUE
-            arrow_direction = UP
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = PRELIGHT
-            file            = "../assets/scrollbar-vertical-stepper-up-prelight.png"
-            border          = { 12, 1, 0, 9 }
-            stretch         = TRUE
-            arrow_direction = UP
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = ACTIVE
-            file            = "../assets/scrollbar-vertical-stepper-up-pressed.png"
-            border          = { 12, 1, 0, 9 }
-            stretch         = TRUE
-            arrow_direction = UP
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = NORMAL
-            file            = "../assets/scrollbar-vertical-stepper-down.png"
-            border          = { 12, 1, 10, 1 }
-            stretch         = TRUE
-            arrow_direction = DOWN
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = INSENSITIVE
-            file            = "../assets/scrollbar-vertical-stepper-down-insensitive.png"
-            border          = { 12, 1, 10, 1 }
-            stretch         = TRUE
-            arrow_direction = DOWN
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = PRELIGHT
-            file            = "../assets/scrollbar-vertical-stepper-down-prelight.png"
-            border          = { 12, 1, 10, 1 }
-            stretch         = TRUE
-            arrow_direction = DOWN
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = ACTIVE
-            file            = "../assets/scrollbar-vertical-stepper-down-pressed.png"
-            border          = { 12, 1, 10, 1 }
-            stretch         = TRUE
-            arrow_direction = DOWN
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = NORMAL
-            file            = "../assets/scrollbar-horizontal-stepper-right.png"
-            border          = { 1, 9, 1, 13 }
-            stretch         = TRUE
-            arrow_direction = RIGHT
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = INSENSITIVE
-            file            = "../assets/scrollbar-horizontal-stepper-right-insensitive.png"
-            border          = { 1, 9, 1, 13 }
-            stretch         = TRUE
-            arrow_direction = RIGHT
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = PRELIGHT
-            file            = "../assets/scrollbar-horizontal-stepper-right-prelight.png"
-            border          = { 1, 9, 1, 13 }
-            stretch         = TRUE
-            arrow_direction = RIGHT
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = ACTIVE
-            file            = "../assets/scrollbar-horizontal-stepper-right-pressed.png"
-            border          = { 1, 9, 1, 13 }
-            stretch         = TRUE
-            arrow_direction = RIGHT
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = NORMAL
-            file            = "../assets/scrollbar-horizontal-stepper-left.png"
-            border          = { 0, 9, 1, 13 }
-            stretch         = TRUE
-            arrow_direction = LEFT
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = INSENSITIVE
-            file            = "../assets/scrollbar-horizontal-stepper-left-insensitive.png"
-            border          = { 0, 9, 1, 13 }
-            stretch         = TRUE
-            arrow_direction = LEFT
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = PRELIGHT
-            file            = "../assets/scrollbar-horizontal-stepper-left-prelight.png"
-            border          = { 0, 9, 1, 13 }
-            stretch         = TRUE
-            arrow_direction = LEFT
-        }
-        image
-        {
-            function        = STEPPER
-            recolorable     = TRUE
-            state           = ACTIVE
-            file            = "../assets/scrollbar-horizontal-stepper-left-pressed.png"
-            border          = { 0, 9, 1, 13 }
-            stretch         = TRUE
-            arrow_direction = LEFT
-        }
-    }
-}
-
-class "GtkScrollbar" style "scrollbar"
-
-# =============================================================================
-# GtkSpinButton
-# =============================================================================
-style "spinbutton"
-{
-}
-
-class "GtkSpinButton" style "spinbutton"
-
-# =============================================================================
-# GtkToolBar
-# =============================================================================
-style "toolbar" = "wide"
-{
-#   GtkToolbar::button-relief = GTK_RELIEF_NORMAL
-
-    fg[ACTIVE]   = "#404040"
-    fg[NORMAL]   = "#000000"
-    fg[PRELIGHT] = "#404040"
-    text[NORMAL] = "#000000"
-
-    engine "pixmap"
-    {
-        image
-        {
-            function    = BOX
-            file        = "../assets/toolbar.png"
-            border      = { 2, 2, 2, 2 }
-            stretch     = TRUE
-        }
-    }
-}
-
-class "*Toolbar"                style "toolbar"
-class "*BonoboDockItem"         style "toolbar"
-widget_class "*Toolbar"         style "toolbar"
-widget_class "*BonoboDockItem"  style "toolbar"
-widget_class "Nautilus*Toolbar" style "toolbar"
-
-# =============================================================================
-# GtkToolItem
-# =============================================================================
-style "toolitem"
-{
-    engine "pixmap"
-    {
-        image
-        {
-            function    = BOX
-            detail      = "buttondefault"
-            recolorable = TRUE
-            file        = "../assets/button-default.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = PRELIGHT
-            recolorable = TRUE
-            file        = "../assets/toolitem-prelight.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = ACTIVE
-            file        = "../assets/toolitem-pressed.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = INSENSITIVE
-            file        = "../assets/toolitem-insensitive.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            file        = "../assets/toolitem-normal.png"
-            border      = { 8, 8, 8, 8 }
-            stretch     = TRUE
-        }
-    }
-}
-
-class "GtkToolItem"         style "toolitem"
-widget_class "*ToolButton*" style "toolitem"
+class "GtkRadioButton"   style "checkbutton"
+class "GtkRadioMenuItem" style "checkbutton"
 
 # =============================================================================
 # GtkToolTip
 # =============================================================================
 style "tooltips" = "default"
 {
-    xthickness = 4
-    ythickness = 4
+    xthickness = 6
+    ythickness = 6
 
     bg[NORMAL]   = @tooltip_bg_color
-    bg[SELECTED] = "#000000"
+    bg[SELECTED] = "#000"
     fg[NORMAL]   = @tooltip_fg_color
 }
 
 widget "gtk-tooltips" style "tooltips"
-
-# =============================================================================
-# GtkTreeView
-# =============================================================================
-style "tree" = "default"
-{
-    GtkTreeView::even_row_color = "#FAF9F7" # "#EBEBEB"
-    GtkTreeView::odd_row_color  = "#F5F2ED" # "#EBEBEB"
-    GtkTreeView::expander_size  = 14
-
-    xthickness = 2
-    ythickness = 2
-
-    bg[ACTIVE]   = "#BDE8FF"
-    bg[NORMAL]   = "#E8E8E8"
-    bg[PRELIGHT] = "#CEEEFF"
-}
-
-widget_class "*.GtkTreeView.GtkButton" style "tree"
-widget_class "*.GtkCTree.GtkButton"    style "tree"
-widget_class "*.GtkList.GtkButton"     style "tree"
-widget_class "*.GtkCList.GtkButton"    style "tree"
 
 # =============================================================================
 # Panel
@@ -1254,63 +322,3 @@ class "XfceArrowButton"               style "panelbutton"
 widget_class "*Panel*GtkLabel"        style "panelbutton"
 widget_class "*Panel*GtkButton"       style "panelbutton"
 widget_class "*Panel*GtkToggleButton" style "panelbutton"
-
-style "panelgradient" = "default" # fix for create app launcher
-{
-    bg_pixmap[ACTIVE] = "../assets/button-normal.png"
-    bg_pixmap[NORMAL] = "../assets/grayscale.png"
-    fg[ACTIVE]        = "#FF0000"
-    fg[INSENSITIVE]   = "#6B6B6B"
-    fg[NORMAL]        = "#FF0000"
-    fg[PRELIGHT]      = "#FF0000"
-    fg[SELECTED]      = "#ff0000"
-}
-
-widget "PanelDItemEditor" style "panelgradient"
-
-style "panelmenubar" = "menubar"
-{
-    fg[NORMAL]      = "#FFFFFF"
-    text[NORMAL]    = "#FFFFFF"
-    fg[PRELIGHT]    = "#E2E2E2"
-    fg[ACTIVE]      = "#E2E2E2"
-
-    engine "pixmap"
-    {
-        image
-        {
-            function    = BOX
-            state       = NORMAL
-            file        = "../assets/menubar-panel.png"
-            border      = { 0, 0, 0, 0 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = ACTIVE
-            file        = "../assets/menubar-panel.png"
-            border      = { 0, 0, 0, 0 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            state       = INSENSITIVE
-            file        = "../assets/menubar-panel.png"
-            border      = { 0, 0, 0, 0 }
-            stretch     = TRUE
-        }
-        image
-        {
-            function    = BOX
-            recolorable = TRUE
-            state       = PRELIGHT
-            file        = "../assets/menubar-item.png"
-            border      = { 10, 10, 10, 10 }
-            stretch     = TRUE
-        }
-    }
-}
-
-widget_class "*Panel*.*MenuBar*" style "panelmenubar"
