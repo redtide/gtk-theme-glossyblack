@@ -520,3 +520,25 @@ GtkStatusbar
     border-radius:                  6px;
     padding:                        3px;
 }
+
+.progressbar,
+.progressbar row,
+.progressbar row:hover,
+.progressbar row:selected,
+.progressbar row:selected:focus
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #ffb487 ),
+                                                   color-stop( 0.5, #ff964b ),
+                                                   color-stop( 0.5, #ff902a ),
+                                                   color-stop( 1,   #ffa554 ) );
+    border:                         1px solid #aaa;
+}
+.progressbar.vertical
+{
+    background-image:               -gtk-gradient( linear, 0 0, 1 0,
+                                                   color-stop( 0,   #b41e1e ),
+                                                   color-stop( 0.5, #961515 ),
+                                                   color-stop( 0.5, #780c0c ),
+                                                   color-stop( 1,   #990202 ) );
+}
