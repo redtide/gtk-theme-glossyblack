@@ -198,6 +198,15 @@ class "GtkTearoffMenuItem" style "menuitem"
 widget_class "*MenuItem.*" style "menuitem"
 
 # =============================================================================
+# GtkComboBox
+# =============================================================================
+style "combobox" = "default"
+{
+    text[NORMAL] = "#fff"
+    fg[NORMAL]   = "#fff"
+}
+widget "*.gtk-combobox-popup-menu.*" style "combobox"
+# =============================================================================
 # GtkNotebook
 # =============================================================================
 style "notebook" = "default"
