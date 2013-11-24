@@ -273,10 +273,7 @@ style "panel"
     bg_pixmap[NORMAL] = "../assets/panel.png"
 }
 
-class "*Panel*"                 style "panel"
-widget_class "*Panel*GtkFrame*" style "panel"
-
-class "Panel*" style "panel"
+widget "*Xfce*Panel*" style "panel"
 
 style "panelbutton"
 {
@@ -327,7 +324,5 @@ style "panelbutton"
     }
 }
 
-class "XfceArrowButton"               style "panelbutton"
-widget_class "*Panel*GtkLabel"        style "panelbutton"
-widget_class "*Panel*GtkButton"       style "panelbutton"
-widget_class "*Panel*GtkToggleButton" style "panelbutton"
+class        "*Xfce*Button*"       style "panelbutton"
+widget_class "*Xfce*Panel*Button*" style "panelbutton"
