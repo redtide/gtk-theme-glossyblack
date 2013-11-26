@@ -10,7 +10,7 @@
 # =============================================================================
 
 gtk-auto-mnemonics = 1
-gtk_color_scheme   = "fg_color:#000000\nbg_color:#f0f0f0\nbase_color:#ffffff\ntext_color:#000000\nselected_bg_color:#FF7800\nselected_fg_color:#000000\ntooltip_bg_color:#FFFCDB\ntooltip_fg_color:#000000"
+gtk_color_scheme   = "fg_color:#000000\nbg_color:#f0f0f0\nbase_color:#ffffff\ntext_color:#000000\nselected_bg_color:#BC4501\nselected_fg_color:#000000\ntooltip_bg_color:#FFFCDB\ntooltip_fg_color:#000000"
 gtk-icon-sizes     = "panel-menu=22,22:gtk-button=16,16"
 
 # =============================================================================
@@ -79,7 +79,7 @@ style "default"
 #       textstyle           = 1
 
         animation           = FALSE
-        colorize_scrollbar  = FALSE
+        colorize_scrollbar  = TRUE
 #       disable_focus       = FALSE
         rgba                = TRUE
 
@@ -174,7 +174,7 @@ class "GtkMenu" style "menu"
 # =============================================================================
 style "menubar" = "wide"
 {
-    bg[NORMAL]   = "#780c0c"
+    bg[NORMAL]   = "#600"
     fg[NORMAL]   = @base_color
 }
 
@@ -188,13 +188,12 @@ widget_class "Nautilus*.GtkMenuBar*" style "menubar"
 style "menuitem"
 {
     bg[SELECTED]    = @selected_bg_color
+    bg[PRELIGHT]    = @selected_bg_color
     fg[NORMAL]      = @base_color
-    fg[PRELIGHT]    = @fg_color
+    fg[PRELIGHT]    = @base_color
 }
 
-class "GtkMenuItem"        style "menuitem"
-class "GtkImageMenuItem"   style "menuitem"
-class "GtkTearoffMenuItem" style "menuitem"
+class        "*MenuItem"   style "menuitem"
 widget_class "*MenuItem.*" style "menuitem"
 
 # =============================================================================
