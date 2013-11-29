@@ -267,13 +267,13 @@ GtkLabel
 }
 .menu .menuitem
 {
-    border-style: 					none;
-    padding: 						2px;
+    border-style:                   none;
+    padding:                        2px;
 }
 .menuitem
 {
-    border-style: 					none;
-    padding: 						3px 8px;
+    border-style:                   none;
+    padding:                        3px 8px;
 }
 .menuitem:hover,
 .progressbar,
@@ -331,7 +331,7 @@ GtkLabel
                                                    color-stop( 0,   #f7f7f7  ),
                                                    color-stop( 0.5, #f7f7f7 ),
                                                    color-stop( 0.5, @bg_color ) );
-	padding:						2px;
+    padding:                        2px;
 }
 .notebook tab.bottom
 {
@@ -339,7 +339,6 @@ GtkLabel
                                                    color-stop( 0,   @bg_color ),
                                                    color-stop( 0.5, @bg_color ),
                                                    color-stop( 0.5, #f7f7f7 ) );
-	padding:						2px;
 }
 .notebook tab.left
 {
@@ -347,7 +346,6 @@ GtkLabel
                                                    color-stop( 0,   #f7f7f7  ),
                                                    color-stop( 0.5, #f7f7f7 ),
                                                    color-stop( 0.5, @bg_color ) );
-	padding:						2px;
 }
 .notebook tab.right
 {
@@ -355,7 +353,6 @@ GtkLabel
                                                    color-stop( 0,   @bg_color ),
                                                    color-stop( 0.5, #f7f7f7 ),
                                                    color-stop( 0.5, #f7f7f7 ) );
-	padding:						2px;
 }
 .notebook tab:active
 {
@@ -398,16 +395,21 @@ GtkLabel
                                                    color-stop( 0, #e1d8d2 ),
                                                    color-stop( 1, #f6f6f6 ) );
 }
-
+.frame
+{
+    border-radius:                  3px;
+}
+.frame,
+.sidebar
+{
+    border:                         1px solid #c8c8c8;
+}
 .sidebar,
 .sidebar.view,
 .sidebar .view
 {
     background-color:               #fff;
-}
-.sidebar .frame
-{
-    border-width:                   0;
+ 
 }
 GtkStatusbar
 {
