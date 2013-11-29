@@ -8,11 +8,6 @@
     Copyright:   (c) Andrea Zanellato
     Licence:     GNU General Public License Version 3
 */
-/*
-===============================================================================
-    Default
-===============================================================================
-*/
 *
 {
     engine:                                     none;
@@ -70,11 +65,6 @@ GtkWindow:backdrop
 {
     color:                                      @backdrop_fg_color;
 }
-/*
-===============================================================================
-    States
-===============================================================================
-*/
 *:insensitive
 {
     color:          shade( @bg_color, 0.6 );
@@ -110,11 +100,6 @@ GtkWindow:backdrop
     background-image:   none;
     color:              @backdrop_selected_fg_color;
 }
-/*
-===============================================================================
-    GtkButton, GtkTreeViewColumn
-===============================================================================
-*/
 .button,
 column-header.button,
 column-header .button
@@ -159,11 +144,6 @@ column-header .button:insensitive
                                                    color-stop( 1,   #eaf0f6 ) );
     border:                         1px solid #c6ccd5;
 }
-/*
-===============================================================================
-    GtkCheckButton, GtkRadioButton, GtkCheckMenuItem, GtkRadioMenuItem
-===============================================================================
-*/
 .check,
 .radio,
 .menuitem.check,
@@ -212,11 +192,6 @@ column-header .button:insensitive
     background-image: none;
     background-color: transparent;
 }
-/*
-===============================================================================
-    GtkComboBox
-===============================================================================
-*/
 GtkComboBox .separator
 {
     /* Always disable separators */
@@ -224,22 +199,12 @@ GtkComboBox .separator
     -GtkWidget-horizontal-separator:0;
     -GtkWidget-vertical-separator:  0;
 }
-/*
-===============================================================================
-    GtkEntry
-===============================================================================
-*/
 .entry
 {
     background-color:               #fff;
     border:                         1px solid #ccc;
     padding:                        3px;
 }
-/*
-===============================================================================
-    GtkIconView
-===============================================================================
-*/
 GtkIconView
 {
     background-color: transparent;
@@ -265,196 +230,160 @@ GtkIconView.view.cell:selected:focus
     border-style: solid;
     border-width: 1px;
 }
-/*
-===============================================================================
-    GtkImage
-===============================================================================
-*/
 GtkImage
 {
     background-color:               transparent;
 }
-/*
-===============================================================================
-    GtkLabel
-===============================================================================
-*/
 GtkLabel
 {
     background-color:               transparent;
 }
-/*
-===============================================================================
-    GtkMenuBar
-===============================================================================
-*/
 .menubar,
-.menubar.menuitem,
-.slider.horizontal
+.slider
 {
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #b41e1e ),
-                                                   color-stop( 0.5, #961515 ),
-                                                   color-stop( 0.5, #780c0c ),
-                                                   color-stop( 1,   #990202 ) );
+                                                   color-stop( 0,   #770000 ),
+                                                   color-stop( 0.5, #880000 ),
+                                                   color-stop( 0.5, #770000 ),
+                                                   color-stop( 1,   #880000 ) );
 
-}
-.menubar .menuitem
-{
-    border-style: none;
-    padding: 3px 8px;
 }
 .menubar
 {
 /*    border-bottom:                  1px solid #000;*/
     color:                          #fff;
 }
-/*
-===============================================================================
-    GtkMenuItem
-===============================================================================
-*/
-.menuitem:hover
-{
-    background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #ff5a00 ),
-                                                   color-stop( 0.5, #ff3c00 ),
-                                                   color-stop( 0.5, #f02d00 ),
-                                                   color-stop( 1,   #f03c00 ) );
-}
-/*
-===============================================================================
-    GtkMenu
-===============================================================================
-*/
 .menu
 {
     background-color:               #000;
     background-image:               -gtk-gradient( linear, 0 0, 1 0,
-                                                   color-stop( 0,    #bababa ),
-                                                   color-stop( 0.07, #5a5a5a ),
+                                                   color-stop( 0,    #aaaaaa ),
+                                                   color-stop( 0.07, #555555 ),
                                                    color-stop( 0.07, #000000 ),
-                                                   color-stop( 1,    #272727 ) );
+                                                   color-stop( 1,    #222222 ) );
     border:                         0;
     padding:                        0;
     color:                          #fff;
 }
 .menu .menuitem
 {
-    border-style: none;
-    padding: 2px;
+    border-style: 					none;
+    padding: 						2px;
+}
+.menuitem
+{
+    border-style: 					none;
+    padding: 						3px 8px;
+}
+.menuitem:hover,
+.progressbar,
+.slider
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #DD5500 ),
+                                                   color-stop( 0.5, #DD7700 ),
+                                                   color-stop( 0.5, #DD5500 ),
+                                                   color-stop( 1,   #DD7700 ) );
+}
+.slider,
+.progressbar
+{
+    border:                         1px solid #884400;
+    color:                          #fff;
+}
+.progressbar.vertical,
+.slider.vertical
+{
+    background-image:               -gtk-gradient( linear, 0 0, 1 0,
+                                                   color-stop( 0,   #DD5500 ),
+                                                   color-stop( 0.5, #DD7700 ),
+                                                   color-stop( 0.5, #DD5500 ),
+                                                   color-stop( 1,   #DD7700 ) );
+}
+.slider:hover
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #DD6600 ),
+                                                   color-stop( 0.5, #DD9900 ),
+                                                   color-stop( 0.5, #DD6600 ),
+                                                   color-stop( 1,   #DD9900 ) );
+}
+.slider.vertical:hover
+{
+    background-image:               -gtk-gradient( linear, 0 0, 1 0,
+                                                   color-stop( 0,   #DD6600 ),
+                                                   color-stop( 0.5, #DD9900 ),
+                                                   color-stop( 0.5, #DD6600 ),
+                                                   color-stop( 1,   #DD9900 ) );
 }
 .separator
 {
     color:                          #aaa;
 }
-
 .notebook
 {
-    border:                         1px solid #aaa;
+    border:                         1px solid #c8c8c8;
     border-radius:                  3px;
 }
 .notebook tab
 {
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #fcfcfc ),
-                                                   color-stop( 0.5, #e7e7e7 ),
-                                                   color-stop( 0.5, #dddbd5 ),
-                                                   color-stop( 1,   #f3f3f3 ) );
+                                                   color-stop( 0,   #f7f7f7  ),
+                                                   color-stop( 0.5, #f7f7f7 ),
+                                                   color-stop( 0.5, @bg_color ) );
+	padding:						2px;
 }
-.notebook tab.top
-{
-    border-bottom:                  0;
-}
-/*
-===============================================================================
-    GtkProgressBar
-===============================================================================
-*/
-.progressbar,
-.progressbar row,
-.progressbar row:hover,
-.progressbar row:selected,
-.progressbar row:selected:focus
+.notebook tab.bottom
 {
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #ffb487 ),
-                                                   color-stop( 0.5, #ff964b ),
-                                                   color-stop( 0.5, #ff902a ),
-                                                   color-stop( 1,   #ffa554 ) );
-    border:                         1px solid #aaa;
+                                                   color-stop( 0,   @bg_color ),
+                                                   color-stop( 0.5, @bg_color ),
+                                                   color-stop( 0.5, #f7f7f7 ) );
+	padding:						2px;
 }
-.progressbar.vertical
+.notebook tab.left
 {
     background-image:               -gtk-gradient( linear, 0 0, 1 0,
-                                                   color-stop( 0,   #ffb487 ),
-                                                   color-stop( 0.5, #ff964b ),
-                                                   color-stop( 0.5, #ff902a ),
-                                                   color-stop( 1,   #ffa554 ) );
+                                                   color-stop( 0,   #f7f7f7  ),
+                                                   color-stop( 0.5, #f7f7f7 ),
+                                                   color-stop( 0.5, @bg_color ) );
+	padding:						2px;
 }
-/*
-===============================================================================
-    GtkScrollbar
-===============================================================================
-*/
-.scrollbar.button
+.notebook tab.right
 {
-    border:                         0;
+    background-image:               -gtk-gradient( linear, 0 0, 1 0,
+                                                   color-stop( 0,   @bg_color ),
+                                                   color-stop( 0.5, #f7f7f7 ),
+                                                   color-stop( 0.5, #f7f7f7 ) );
+	padding:						2px;
 }
-.scrollbar.button.top,
-.scrollbar.button.top:active
-{
-    border-bottom:                  1px solid #aaa;
-}
-.scrollbar.button.bottom,
-.scrollbar.button.bottom:active
-{
-    border-top:                     1px solid #aaa;
-}
-.scrollbar.button.left,
-.scrollbar.button.left:active
-{
-    border-right:                   1px solid #aaa;
-}
-.scrollbar.button.right,
-.scrollbar.button.right:active
-{
-    border-left:                    1px solid #aaa;
-}
-.slider
-{
-    border:                         1px solid #8d3909;
-    color:                          #fff;
-    padding:                        0px;
-    background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #b41e1e ),
-                                                   color-stop( 0.5, #961515 ),
-                                                   color-stop( 0.5, #780c0c ),
-                                                   color-stop( 1,   #990202 ) );
-}
-.slider:hover
+.notebook tab:active
 {
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #d22d2d ),
-                                                   color-stop( 0.5, #b41e1e ),
-                                                   color-stop( 0.5, #960f0f ),
-                                                   color-stop( 1,   #ac0606 ) );
+                                                   color-stop( 0,   @base_color ),
+                                                   color-stop( 0.5, @base_color ),
+                                                   color-stop( 0.5, @bg_color ) );
 }
-.slider.vertical
+.notebook tab.bottom:active
+{
+    background-image:               -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   @bg_color ),
+                                                   color-stop( 0.5, @bg_color ),
+                                                   color-stop( 0.5, @base_color ) );
+}
+.notebook tab.left:active
 {
     background-image:               -gtk-gradient( linear, 0 0, 1 0,
-                                                   color-stop( 0,   #b41e1e ),
-                                                   color-stop( 0.5, #961515 ),
-                                                   color-stop( 0.5, #780c0c ),
-                                                   color-stop( 1,   #990202 ) );
+                                                   color-stop( 0,   @base_color ),
+                                                   color-stop( 0.5, @base_color ),
+                                                   color-stop( 0.5, @bg_color ) );
 }
-.slider.vertical:hover
+.notebook tab.right:active
 {
     background-image:               -gtk-gradient( linear, 0 0, 1 0,
-                                                   color-stop( 0,   #d22d2d ),
-                                                   color-stop( 0.5, #b41e1e ),
-                                                   color-stop( 0.5, #960f0f ),
-                                                   color-stop( 1,   #ac0606 ) );
+                                                   color-stop( 0,   @bg_color ),
+                                                   color-stop( 0.5, @bg_color ),
+                                                   color-stop( 0.5, @base_color ) );
 }
 .trough
 {
@@ -480,22 +409,12 @@ GtkLabel
 {
     border-width:                   0;
 }
-/*
-===============================================================================
-    GtkStatusbar
-===============================================================================
-*/
 GtkStatusbar
 {
     color:                          #000;
     padding:                        3px;
     border:                         1px solid #000;
 }
-/*
-===============================================================================
-    GtkToolbar
-===============================================================================
-*/
 .toolbar
 {
     -GtkToolbar-internal-padding:   0;
@@ -551,11 +470,6 @@ GtkStatusbar
                                                    color-stop( 1,   #e4e4e4 ) );
     border:                         1px solid #c6c6c6;
 }
-/*
-===============================================================================
-    GtkTooltip
-===============================================================================
-*/
 .tooltip
 {
     background-color:               @tooltip_bg_color;
