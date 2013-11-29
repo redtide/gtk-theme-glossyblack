@@ -58,17 +58,17 @@
 }
 GtkWindow
 {
-    color:                                      @fg_color;
-    background-color:                           @bg_color;
+    color:                          @fg_color;
+    background-color:               @bg_color;
 }
 GtkWindow:backdrop
 {
-    color:                                      @backdrop_fg_color;
+    color:                          @backdrop_fg_color;
 }
 *:insensitive
 {
-    color:          shade( @bg_color, 0.6 );
-    text-shadow:    0px 1px alpha( shade( @bg_color, 1.25 ), 0.5 );
+    color:                          shade( @bg_color, 0.6 );
+    text-shadow:                    0px 1px alpha( shade( @bg_color, 1.25 ), 0.5 );
 }
 *:active
 {
@@ -84,21 +84,21 @@ GtkWindow:backdrop
 }
 *:hover:insensitive
 {
-    background-image:   none;
+    background-image:               none;
 }
 *:selected,
 *:selected:focused
 {
-    background-color:   alpha( @selected_bg_color, 0.9 );
-    background-image:   none;
-    color:              @selected_fg_color;
+    background-color:               alpha( @selected_bg_color, 0.9 );
+    background-image:               none;
+    color:                          @selected_fg_color;
 }
 *:selected:backdrop,
 *:selected:focused:backdrop
 {
-    background-color:   alpha( @backdrop_selected_bg_color, 0.9 );
-    background-image:   none;
-    color:              @backdrop_selected_fg_color;
+    background-color:               alpha( @backdrop_selected_bg_color, 0.9 );
+    background-image:               none;
+    color:                          @backdrop_selected_fg_color;
 }
 .button,
 column-header.button,
@@ -189,8 +189,8 @@ column-header .button:insensitive
 .menuitem.check:insensitive,
 .menuitem.radio:insensitive
 {
-    background-image: none;
-    background-color: transparent;
+    background-image:               none;
+    background-color:               transparent;
 }
 GtkComboBox .separator
 {
@@ -207,28 +207,28 @@ GtkComboBox .separator
 }
 GtkIconView
 {
-    background-color: transparent;
+    background-color:               transparent;
 }
 GtkIconView.view.cell:selected,
 GtkIconView.view.cell:selected:focus
 {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@theme_selected_bg_color, 1.2)),
-                                     to (shade(@theme_selected_bg_color, 1.0)));
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 1px;
-    color: @theme_selected_fg_color;
-    border-color: shade(@theme_selected_bg_color, 0.8);
+    background-image:               -gtk-gradient( linear, left top, left bottom,
+                                        from( shade( @selected_bg_color, 1.2 ) ),
+                                        to( shade( @selected_bg_color, 1.0 ) ) );
+    border-radius:                  3px;
+    border-style:                   solid;
+    border-width:                   1px;
+    color:                          @selected_fg_color;
+    border-color:                   shade( @selected_bg_color, 0.8 );
 }
 .view.rubberband,
 .rubberband
 {
-    background-color: alpha(@theme_selected_bg_color, 0.3);
-    border-color: @theme_selected_bg_color;
-    border-radius: 0;
-    border-style: solid;
-    border-width: 1px;
+    background-color:               alpha( @selected_bg_color, 0.3 );
+    border-color:                   @selected_bg_color;
+    border-radius:                  0;
+    border-style:                   solid;
+    border-width:                   1px;
 }
 GtkImage
 {
@@ -238,19 +238,13 @@ GtkLabel
 {
     background-color:               transparent;
 }
-.menubar,
-.slider
+.menubar
 {
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
                                                    color-stop( 0,   #770000 ),
                                                    color-stop( 0.5, #880000 ),
                                                    color-stop( 0.5, #770000 ),
                                                    color-stop( 1,   #880000 ) );
-
-}
-.menubar
-{
-/*    border-bottom:                  1px solid #000;*/
     color:                          #fff;
 }
 .menu
@@ -261,14 +255,8 @@ GtkLabel
                                                    color-stop( 0.07, #555555 ),
                                                    color-stop( 0.07, #000000 ),
                                                    color-stop( 1,    #222222 ) );
-    border:                         0;
-    padding:                        0;
-    color:                          #fff;
-}
-.menu .menuitem
-{
-    border-style:                   none;
     padding:                        2px;
+    color:                          #fff;
 }
 .menuitem
 {
@@ -276,8 +264,7 @@ GtkLabel
     padding:                        3px 8px;
 }
 .menuitem:hover,
-.progressbar,
-.slider
+.progressbar
 {
     background-image:               -gtk-gradient( linear, 0 0, 0 1,
                                                    color-stop( 0,   #DD5500 ),
@@ -285,36 +272,23 @@ GtkLabel
                                                    color-stop( 0.5, #DD5500 ),
                                                    color-stop( 1,   #DD7700 ) );
 }
-.slider,
+.menu .menuitem
+{
+    border-style:                   none;
+    padding:                        2px;
+}
 .progressbar
 {
     border:                         1px solid #884400;
     color:                          #fff;
 }
-.progressbar.vertical,
-.slider.vertical
+.progressbar.vertical
 {
     background-image:               -gtk-gradient( linear, 0 0, 1 0,
                                                    color-stop( 0,   #DD5500 ),
                                                    color-stop( 0.5, #DD7700 ),
                                                    color-stop( 0.5, #DD5500 ),
                                                    color-stop( 1,   #DD7700 ) );
-}
-.slider:hover
-{
-    background-image:               -gtk-gradient( linear, 0 0, 0 1,
-                                                   color-stop( 0,   #DD6600 ),
-                                                   color-stop( 0.5, #DD9900 ),
-                                                   color-stop( 0.5, #DD6600 ),
-                                                   color-stop( 1,   #DD9900 ) );
-}
-.slider.vertical:hover
-{
-    background-image:               -gtk-gradient( linear, 0 0, 1 0,
-                                                   color-stop( 0,   #DD6600 ),
-                                                   color-stop( 0.5, #DD9900 ),
-                                                   color-stop( 0.5, #DD6600 ),
-                                                   color-stop( 1,   #DD9900 ) );
 }
 .separator
 {
@@ -410,6 +384,48 @@ GtkLabel
 {
     background-color:               #fff;
  
+}
+.slider
+{
+    border-radius:                  3px;
+    padding:                        3px;
+    border:                         1px solid #884400;
+
+    background-image:               url("../assets/scrollbar-thumb-horizontal.png"),
+                                    -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #DD5500 ),
+                                                   color-stop( 0.5, #DD7700 ),
+                                                   color-stop( 0.5, #DD5500 ),
+                                                   color-stop( 1,   #DD7700 ) );
+    background-repeat:              no-repeat;
+    background-position:            center;
+}
+.slider:hover
+{
+    background-image:               url("../assets/scrollbar-thumb-horizontal.png"),
+                                    -gtk-gradient( linear, 0 0, 0 1,
+                                                   color-stop( 0,   #DD6600 ),
+                                                   color-stop( 0.5, #DD9900 ),
+                                                   color-stop( 0.5, #DD6600 ),
+                                                   color-stop( 1,   #DD9900 ) );
+}
+.slider.vertical
+{
+    background-image:               url("../assets/scrollbar-thumb-vertical.png"),
+                                    -gtk-gradient( linear, 0 0, 1 0,
+                                                   color-stop( 0,   #DD5500 ),
+                                                   color-stop( 0.5, #DD7700 ),
+                                                   color-stop( 0.5, #DD5500 ),
+                                                   color-stop( 1,   #DD7700 ) );
+}
+.slider.vertical:hover
+{
+    background-image:               url("../assets/scrollbar-thumb-vertical.png"),
+                                    -gtk-gradient( linear, 0 0, 1 0,
+                                                   color-stop( 0,   #DD6600 ),
+                                                   color-stop( 0.5, #DD9900 ),
+                                                   color-stop( 0.5, #DD6600 ),
+                                                   color-stop( 1,   #DD9900 ) );
 }
 GtkStatusbar
 {
