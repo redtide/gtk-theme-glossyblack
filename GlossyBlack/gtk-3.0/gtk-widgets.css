@@ -474,7 +474,6 @@ GtkStatusbar
 {
     background-color:               @tooltip_bg_color;
     color:                          @tooltip_fg_color;
-    border:                         1px solid #aaa;
-    border-radius:                  6px;
+    border:                         1px solid #f0f078;
     padding:                        3px;
 }
