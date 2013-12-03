@@ -56,7 +56,7 @@ style "default"
     engine "murrine"
     {
         border_shades       = { 1.0, 1.0 }
-        glow_shade          = 2.0
+#       glow_shade          = 2.0
         gradient_shades     = { 1.2, 1.0, 1.0, 1.2 }
         highlight_shade     = 1.2
         lightborder_shade   = 2.0
@@ -79,7 +79,7 @@ style "default"
 #       textstyle           = 1
 
         animation           = FALSE
-        colorize_scrollbar  = TRUE
+#       colorize_scrollbar  = TRUE
 #       disable_focus       = FALSE
         rgba                = TRUE
 
@@ -94,7 +94,7 @@ style "default"
         menustyle           = 1
         menubaritemstyle    = 0
         progressbarstyle    = 0
-        scrollbarstyle      = 2
+#       scrollbarstyle      = 2
         separatorstyle      = 1
         sliderstyle         = 1
         spinbuttonstyle     = 1
