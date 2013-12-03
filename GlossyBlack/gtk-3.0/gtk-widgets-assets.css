@@ -1,0 +1,125 @@
+/*
+    Name:        GlossyBlack/gtk-3.0/gtk-widgets-assets.css
+    Purpose:     GlossyBlack GTK3 theme widget image backgrounds
+    Author:      Andrea Zanellato
+    Modified by:
+    Created:     2013/12/02
+    Copyright:   (c) Andrea Zanellato
+    Licence:     GNU General Public License Version 3
+*/
+.check,
+.check:backdrop,
+.check:hover,
+.check row:selected:backdrop,
+.view.cell.check,
+.view.cell.check:backdrop
+{
+    background-image:               url("../assets/checkbutton.png");
+    background-repeat:              no-repeat;
+    background-position:            center;
+}
+.check:active,
+.check:active:backdrop,
+.check row:selected:active:backdrop,
+.view.cell.check:active,
+.view.cell.check:active:backdrop
+{
+    background-image:               url("../assets/checkbutton-selected.png");
+}
+.check:inconsistent,
+.check:inconsistent:backdrop,
+.check row:selected:inconsistent:backdrop,
+.view.cell.check:inconsistent
+{
+    background-image:               url("../assets/checkbutton-mixed.png");
+}
+.radio,
+.radio:backdrop,
+.radio:hover,
+.radio row:selected:backdrop,
+.view.cell.radio,
+.view.cell.radio:backdrop
+{
+    background-image:               url("../assets/radiobutton.png");
+    background-repeat:              no-repeat;
+    background-position:            center;
+}
+.radio:active,
+.radio:active:backdrop,
+.radio row:selected:active:backdrop,
+.view.cell.radio:active,
+.view.cell.radio:active:backdrop
+{
+    background-image:               url("../assets/radiobutton-selected.png");
+}
+.radio:inconsistent,
+.radio:inconsistent:backdrop,
+.radio row:selected:inconsistent:backdrop,
+.view.cell.radio:inconsistent
+{
+    background-image:               url("../assets/radiobutton-mixed.png");
+}
+.pane-separator
+{
+    background-image:               url("../assets/pane-separator-grip.png");
+    background-repeat:              no-repeat;
+    background-position:            center;
+}
+.pane-separator.vertical
+{
+    background-image:       url("../assets/pane-separator-grip-vertical.png");
+}
+.scale.slider
+{
+    background-image:       url("../assets/scale-horizontal-slider.png");
+}
+.scale.slider:hover
+{
+    background-image:       url("../assets/scale-horizontal-slider-prelight.png");
+}
+.scale.slider.vertical
+{
+    background-image:       url("../assets/scale-vertical-slider.png");
+}
+.scale.slider.vertical:hover
+{
+    background-image:       url("../assets/scale-vertical-slider-prelight.png");
+}
+.slider
+{
+    background-image:               url("../assets/scrollbar-thumb-horizontal.png"),
+                                    -gtk-gradient( linear, 0 0, 0 1,
+                                    color-stop( 0,   @glossy_chocolate_bg_color_1 ),
+                                    color-stop( 0.5, @glossy_chocolate_bg_color_2 ),
+                                    color-stop( 0.5, @glossy_chocolate_bg_color_3 ),
+                                    color-stop( 1,   @glossy_chocolate_bg_color_2 ) );
+    background-repeat:              no-repeat;
+    background-position:            center;
+}
+.slider:hover
+{
+    background-image:               url("../assets/scrollbar-thumb-horizontal.png"),
+                                    -gtk-gradient( linear, 0 0, 0 1,
+                                    color-stop( 0,   @glossy_chocolate_hover_color_1 ),
+                                    color-stop( 0.5, @glossy_chocolate_hover_color_2 ),
+                                    color-stop( 0.5, @glossy_chocolate_hover_color_3 ),
+                                    color-stop( 1,   @glossy_chocolate_hover_color_2 ) );
+}
+.slider.vertical
+{
+    background-image:               url("../assets/scrollbar-thumb-vertical.png"),
+                                    -gtk-gradient( linear, 0 0, 1 0,
+                                    color-stop( 0,   @glossy_chocolate_bg_color_1 ),
+                                    color-stop( 0.5, @glossy_chocolate_bg_color_2 ),
+                                    color-stop( 0.5, @glossy_chocolate_bg_color_3 ),
+                                    color-stop( 1,   @glossy_chocolate_bg_color_2 ) );
+}
+.slider.vertical:hover
+{
+    background-image:               url("../assets/scrollbar-thumb-vertical.png"),
+                                    -gtk-gradient( linear, 0 0, 1 0,
+                                    color-stop( 0,   @glossy_chocolate_hover_color_1 ),
+                                    color-stop( 0.5, @glossy_chocolate_hover_color_2 ),
+                                    color-stop( 0.5, @glossy_chocolate_hover_color_3 ),
+                                    color-stop( 1,   @glossy_chocolate_hover_color_2 ) );
+}
