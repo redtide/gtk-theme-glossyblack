@@ -263,11 +263,11 @@ widget "gtk-tooltips" style "tooltips"
 # =============================================================================
 style "panel"
 {
-    fg[ACTIVE]      = "#ffffff"
+#   text color
     fg[NORMAL]      = "#ffffff"
-    fg[PRELIGHT]    = "#ffffff"
-    fg[SELECTED]    = "#ffffff"
-    fg[INSENSITIVE] = "#ffffff"
+
+#   separator and border backgrounds
+    bg[NORMAL]      = "#2d2d2d"
 
     bg_pixmap[NORMAL] = "../assets/panel.png"
 }
