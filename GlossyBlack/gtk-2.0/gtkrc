@@ -94,7 +94,7 @@ style "default"
         menustyle           = 1
         menubaritemstyle    = 0
         progressbarstyle    = 0
-#       scrollbarstyle      = 2
+        scrollbarstyle      = 2
         separatorstyle      = 1
         sliderstyle         = 1
         spinbuttonstyle     = 1
@@ -250,7 +250,7 @@ class "GtkRadioMenuItem" style "checkbutton"
 # =============================================================================
 # GtkRange / GtkScrollbar
 # =============================================================================
-style "scrollbar"
+style "scrollbar" = "default"
 {
     bg[SELECTED] = "#7b3f00"
 
