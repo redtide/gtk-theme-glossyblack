@@ -285,6 +285,7 @@ style "panel"
 {
 #   text color
     fg[NORMAL]      = "#ffffff"
+    fg[PRELIGHT]    = "#ffffff"
 
 #   separator and border backgrounds
     bg[NORMAL]      = "#2d2d2d"
