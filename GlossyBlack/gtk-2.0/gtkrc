@@ -284,6 +284,7 @@ widget "gtk-tooltips" style "tooltips"
 style "panel"
 {
 #   text color
+    fg[ACTIVE]      = "#ffffff"
     fg[NORMAL]      = "#ffffff"
     fg[PRELIGHT]    = "#ffffff"
 

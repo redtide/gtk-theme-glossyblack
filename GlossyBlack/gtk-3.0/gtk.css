@@ -122,10 +122,10 @@
 @define-color glossy_insensitive_color_4        #e4e4e4;
 
 /* Menu */
-@define-color glossy_black_bg_color_1           #aaaaaa;
-@define-color glossy_black_bg_color_2           #555555;
+@define-color glossy_black_bg_color_1           #a0a0a0;
+@define-color glossy_black_bg_color_2           #444444;
 @define-color glossy_black_bg_color_3           #000000;
-@define-color glossy_black_bg_color_4           #222222;
+@define-color glossy_black_bg_color_4           #333333;
 
 /* Menuitem and Progressbar */
 @define-color glossy_orange_bg_color_1          #f4600b;
