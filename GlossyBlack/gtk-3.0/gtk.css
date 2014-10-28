@@ -14,13 +14,13 @@
 ===============================================================================
 */
 @define-color bg_color                          #f0f0f0;
-@define-color fg_color                          #000;
-@define-color base_color                        #fff;
-@define-color text_color                        #000;
+@define-color fg_color                          black;
+@define-color base_color                        white;
+@define-color text_color                        black;
 @define-color selected_bg_color                 #ff7800;
-@define-color selected_fg_color                 #000;
+@define-color selected_fg_color                 black;
 @define-color tooltip_bg_color                  #ffffd2;
-@define-color tooltip_fg_color                  #000;
+@define-color tooltip_fg_color                  black;
 
 @define-color insensitive_bg_color              #f4f4f2;
 @define-color insensitive_fg_color              #a7aba7;
@@ -96,6 +96,12 @@
 @define-color notebook_tab_color_3              #e2dad2;
 @define-color notebook_tab_color_4              #eae4de;
 
+/* Titlebar buttons */
+@define-color button_black_active_color_1       #3d3d3d;
+@define-color button_black_active_color_2       #4d4d4d;
+@define-color button_black_active_color_3       #2d2d2d;
+@define-color button_black_active_color_4       #030303;
+
 /* Scrollbar and Switch */
 @define-color glossy_chocolate_bg_color_1       #c8833c;
 @define-color glossy_chocolate_bg_color_2       #a15e18;
@@ -124,7 +130,7 @@
 /* Menu */
 @define-color glossy_black_bg_color_1           #a0a0a0;
 @define-color glossy_black_bg_color_2           #444444;
-@define-color glossy_black_bg_color_3           #000000;
+@define-color glossy_black_bg_color_3           black;
 @define-color glossy_black_bg_color_4           #333333;
 
 /* Menuitem and Progressbar */
