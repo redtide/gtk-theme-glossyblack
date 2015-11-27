@@ -155,7 +155,7 @@ widget_class "*.GtkFrame.GtkLabel" style "frame-title"
 # =============================================================================
 style "menu" = "wide"
 {
-    bg[NORMAL] = "#000"
+    bg[NORMAL]   = "#000"
 
     engine "pixmap"
     {
@@ -191,10 +191,11 @@ widget_class "Nautilus*.GtkMenuBar*" style "menubar"
 # =============================================================================
 style "menuitem"
 {
-    bg[SELECTED]    = @selected_bg_color
-    bg[PRELIGHT]    = @selected_bg_color
-    fg[NORMAL]      = @base_color
-    fg[PRELIGHT]    = @base_color
+    bg[SELECTED] = @selected_bg_color
+    bg[PRELIGHT] = @selected_bg_color
+    fg[NORMAL]   = @base_color
+    fg[PRELIGHT] = @base_color
+    text[NORMAL] = @base_color
 }
 
 class        "*MenuItem"   style "menuitem"
