@@ -15,10 +15,6 @@
 	-GtkCheckButton-indicator-size:             13;
 	-GtkCheckMenuItem-indicator-size:           13;
 
-	/* Menus */
-	-GtkMenu-horizontal-padding:                0;
-	-GtkMenu-vertical-padding:                  0;
-
 	/* Arrow sizes */
 	-GtkExpander-expander-size:                 11;
 	-GtkMenuItem-expander-size:                 11;
@@ -40,20 +36,10 @@
 	-GtkWidget-link-color:                      @link_color;
 	-GtkWidget-visited-link-color:              @link_color;
 
-	/* TODO: how to have a sunken/inset border style for separators? */
-	-GtkWidget-separator-height:                2;
-	-GtkWidget-separator-width:                 2;
-	-GtkWidget-wide-separators:                 false;
-
-/* Get rid of the resize grip that is shown also over other widgets.
-	-GtkWindow-resize-grip-height:              0;
-	-GtkWindow-resize-grip-width:               0;
-*/
 	/* Inherit the color from parent by default */
 	color:                          inherit;
 	border-color:                   transparent;
 	background-color:               transparent;
-
 	padding:                        0;
 }
 *:insensitive
@@ -133,9 +119,29 @@
 	                                color-stop(1,   @button_insensitive_color_4));
 	border:                         1px solid @button_insensitive_border_color;
 }
-GtkCheckButton:selected:focus
+/* Check / Radio buttons */
+.check,
+.check row,
+.radio,
+.radio row
 {
-	background-color:               transparent;
+	border:                         1px solid @border_color;
+	color:                          #333;
+}
+.check:insensitive,
+.radio:insensitive
+{
+	color:                          @insensitive_fg_color;
+}
+.menu .check,
+.menu .radio
+{
+	color:                          #fff;
+}
+.menu .check:insensitive,
+.menu .radio:insensitive
+{
+	color:                          @insensitive_fg_color;
 }
 column-header.button,
 column-header .button
@@ -338,18 +344,16 @@ GtkIconView.view.cell:selected:focus
 	                                color-stop(0.5, @glossy_wine_bg_color_2),
 	                                color-stop(0.5, @glossy_wine_bg_color_3),
 	                                color-stop(1,   @glossy_wine_bg_color_4));
-
 	border-top:                     1px solid @glossy_wine_border_top_color;
 	border-bottom:                  1px solid @glossy_wine_border_bottom_color;
 	border-left:                    1px solid @glossy_wine_border_left_color;
 	border-right:                   1px solid @glossy_wine_border_right_color;
-
 	color:                          @base_color;
 	padding:                        2px 0px 2px;
 }
-.menubar.menuitem
+.menubar .menuitem
 {
-	border-style:                   none;
+	padding:                        1px 6px;
 }
 .menu
 {
@@ -358,13 +362,16 @@ GtkIconView.view.cell:selected:focus
 	                                color-stop(0.07, @glossy_black_bg_color_2),
 	                                color-stop(0.07, @glossy_black_bg_color_3),
 	                                color-stop(1,    @glossy_black_bg_color_4));
-	color:                          @base_color;
 	border:                         1px solid @border_color_dark;
+	color:                          @base_color;
+/*
+	@todo GTK3 draw borders without taking in account the padding
 	padding:                        3px;
+*/
 }
-.menuitem
+.menu .menuitem
 {
-	padding:                        1px 7px;
+	padding:                        2px;
 }
 .menuitem:hover
 {
@@ -467,10 +474,10 @@ GtkTreeView.separator:backdrop
 {
 	color:                          @fg_color;
 }
-.progressbar
+GtkProgressBar
 {
-	border:                         1px solid @glossy_chocolate_border_color;
-	color:                          @base_color;
+	-GtkProgressBar-min-horizontal-bar-height: 16;
+	-GtkProgressBar-min-vertical-bar-width: 16;
 }
 .progressbar
 {
@@ -479,6 +486,8 @@ GtkTreeView.separator:backdrop
 	                                color-stop(0.5, @glossy_orange_bg_color_2),
 	                                color-stop(0.5, @glossy_orange_bg_color_3),
 	                                color-stop(1,   @glossy_orange_bg_color_4));
+	border:                         1px solid @glossy_chocolate_border_color;
+	color:                          @base_color;
 }
 .progressbar.vertical
 {
@@ -664,8 +673,8 @@ GtkStatusbar
 {
 	-GtkWidget-focus-line-width:    0;
 
-	border:                         1px solid @border_color;
-	border-radius:                  3px;
+/*	No border for flat buttons */
+	border:                         0;
 	padding:                        2px;
 }
 .toolbar .button:active,
@@ -718,3 +727,9 @@ GtkStatusbar
 	background-color:               @base_color;
 	color:                          @text_color;
 }
+/*
+GtkWindow
+{
+	-GtkWindow-decoration-resize-handle: 10;
+}
+*/
