@@ -487,7 +487,6 @@ GtkProgressBar
 	                                color-stop(0.5, @glossy_orange_bg_color_3),
 	                                color-stop(1,   @glossy_orange_bg_color_4));
 	border:                         1px solid @glossy_chocolate_border_color;
-	color:                          @base_color;
 }
 .progressbar.vertical
 {
