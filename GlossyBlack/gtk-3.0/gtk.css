@@ -4,7 +4,6 @@
     Author:      Andrea Zanellato
     Modified by:
     Created:     2013/02/03
-    Revision:    $Hash$
     Copyright:   (c) Andrea Zanellato
     Licence:     GNU General Public License Version 3
 */
@@ -23,7 +22,7 @@
 @define-color tooltip_fg_color                  black;
 
 @define-color insensitive_bg_color              #f4f4f2;
-@define-color insensitive_fg_color              #a7aba7;
+@define-color insensitive_fg_color              #a8a8a8;
 /*
 ===============================================================================
     Misc colors used by GTK+
@@ -63,11 +62,11 @@
 @define-color button_active_color_4             #ccc3b7;
 @define-color button_active_border_color        #967b54;
 
-@define-color button_hover_color_1              #ebd8b7;
-@define-color button_hover_color_2              #f6ebe0;
-@define-color button_hover_color_3              #edd5b4;
-@define-color button_hover_color_4              #f3eadb;
-@define-color button_hover_border_color         #c6ab84;
+@define-color button_hover_color_1              #fcf4ee;
+@define-color button_hover_color_2              #f4d6bf;
+@define-color button_hover_color_3              #e7b893;
+@define-color button_hover_color_4              #f6d9c3;
+@define-color button_hover_border_color         #ce9c6f;
 
 @define-color button_insensitive_color_1        #dee0e7;
 @define-color button_insensitive_color_2        #edf0f6;
