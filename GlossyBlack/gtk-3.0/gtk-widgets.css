@@ -587,6 +587,44 @@ levelbar.vertical block.empty
 	                                              color-stop(0.5, @base_color),
 	                                              color-stop(0.5, @bg_color));
 }
+scrollbar.horizontal slider,
+switch slider
+{
+    background-image:       -gtk-gradient( linear, 0 0, 0 1,
+                            color-stop( 0,   @glossy_chocolate_bg_color_1 ),
+                            color-stop( 0.5, @glossy_chocolate_bg_color_2 ),
+                            color-stop( 0.5, @glossy_chocolate_bg_color_3 ),
+                            color-stop( 1,   @glossy_chocolate_bg_color_2 ) );
+    background-repeat:      no-repeat;
+    background-position:    center;
+}
+scrollbar.horizontal slider:hover,
+switch:hover slider
+{
+    background-image:       -gtk-gradient( linear, 0 0, 0 1,
+                            color-stop( 0,   @glossy_chocolate_hover_color_1 ),
+                            color-stop( 0.5, @glossy_chocolate_hover_color_2 ),
+                            color-stop( 0.5, @glossy_chocolate_hover_color_3 ),
+                            color-stop( 1,   @glossy_chocolate_hover_color_2 ) );
+}
+scrollbar.vertical slider
+{
+    background-image:       -gtk-gradient( linear, 0 0, 1 0,
+                            color-stop( 0,   @glossy_chocolate_bg_color_1 ),
+                            color-stop( 0.5, @glossy_chocolate_bg_color_2 ),
+                            color-stop( 0.5, @glossy_chocolate_bg_color_3 ),
+                            color-stop( 1,   @glossy_chocolate_bg_color_2 ) );
+    background-repeat:      no-repeat;
+    background-position:    center;
+}
+scrollbar.vertical slider:hover
+{
+    background-image:       -gtk-gradient( linear, 0 0, 1 0,
+                            color-stop( 0,   @glossy_chocolate_hover_color_1 ),
+                            color-stop( 0.5, @glossy_chocolate_hover_color_2 ),
+                            color-stop( 0.5, @glossy_chocolate_hover_color_3 ),
+                            color-stop( 1,   @glossy_chocolate_hover_color_2 ) );
+}
 separator
 {
 	color:                          @border_color_dark;

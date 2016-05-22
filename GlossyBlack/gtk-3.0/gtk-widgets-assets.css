@@ -7,62 +7,6 @@
     Copyright:   (c) Andrea Zanellato
     Licence:     GNU General Public License Version 3
 */
-check,
-check:backdrop,
-check:hover,
-check row:selected:backdrop,
-view.cell.check,
-view.cell.check:backdrop
-{
-    background-image:       url("../assets/checkbutton.png");
-    background-repeat:      no-repeat;
-    background-position:    center;
-    border-style:           none;
-    padding:                1px;
-}
-check:active,
-check:active:backdrop,
-check row:selected:active:backdrop,
-view.cell.check:active,
-view.cell.check:active:backdrop
-{
-    background-image:       url("../assets/checkbutton-selected.png");
-}
-check:indeterminate,
-check:indeterminate:backdrop,
-check row:selected:indeterminate:backdrop,
-view.cell.check:indeterminate
-{
-    background-image:       url("../assets/checkbutton-mixed.png");
-}
-radio,
-radio:backdrop,
-radio:hover,
-radio row:selected:backdrop,
-view.cell.radio,
-view.cell.radio:backdrop
-{
-    background-image:       url("../assets/radiobutton.png");
-    background-repeat:      no-repeat;
-    background-position:    center;
-    border-style:           none;
-    padding:                1px;
-}
-radio:active,
-radio:active:backdrop,
-radio row:selected:active:backdrop,
-view.cell.radio:active,
-view.cell.radio:active:backdrop
-{
-    background-image:       url("../assets/radiobutton-selected.png");
-}
-radio:indeterminate,
-radio:indeterminate:backdrop,
-radio row:selected:indeterminate:backdrop,
-view.cell.radio:indeterminate
-{
-    background-image:       url("../assets/radiobutton-mixed.png");
-}
 pane-separator
 {
     background-image:       url("../assets/pane-separator-grip.png");
@@ -98,42 +42,4 @@ scale.vertical slider
 scale.vertical slider:hover
 {
     background-image:       url("../assets/scale-vertical-slider-prelight.png");
-}
-scrollbar.horizontal slider,
-switch slider
-{
-    background-image:       -gtk-gradient( linear, 0 0, 0 1,
-                            color-stop( 0,   @glossy_chocolate_bg_color_1 ),
-                            color-stop( 0.5, @glossy_chocolate_bg_color_2 ),
-                            color-stop( 0.5, @glossy_chocolate_bg_color_3 ),
-                            color-stop( 1,   @glossy_chocolate_bg_color_2 ) );
-    background-repeat:      no-repeat;
-    background-position:    center;
-}
-scrollbar.horizontal slider:hover,
-switch:hover slider
-{
-    background-image:       -gtk-gradient( linear, 0 0, 0 1,
-                            color-stop( 0,   @glossy_chocolate_hover_color_1 ),
-                            color-stop( 0.5, @glossy_chocolate_hover_color_2 ),
-                            color-stop( 0.5, @glossy_chocolate_hover_color_3 ),
-                            color-stop( 1,   @glossy_chocolate_hover_color_2 ) );
-}
-scrollbar.vertical slider
-{
-    background-image:       -gtk-gradient( linear, 0 0, 1 0,
-                            color-stop( 0,   @glossy_chocolate_bg_color_1 ),
-                            color-stop( 0.5, @glossy_chocolate_bg_color_2 ),
-                            color-stop( 0.5, @glossy_chocolate_bg_color_3 ),
-                            color-stop( 1,   @glossy_chocolate_bg_color_2 ) );
-    background-repeat:      no-repeat;
-    background-position:    center;
-}
-scrollbar.vertical slider:hover
-{
-    background-image:       -gtk-gradient( linear, 0 0, 1 0,
-                            color-stop( 0,   @glossy_chocolate_hover_color_1 ),
-                            color-stop( 0.5, @glossy_chocolate_hover_color_2 ),
-                            color-stop( 0.5, @glossy_chocolate_hover_color_3 ),
-                            color-stop( 1,   @glossy_chocolate_hover_color_2 ) );
 }
