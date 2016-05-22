@@ -190,20 +190,30 @@ button:active
 	                                color-stop(1,   @button_active_color_4));
 	border:                         1px solid @button_active_border_color;
 }
-/* Check / Radio buttons
-check,
-check row,
-radio,
-radio row
+check,                       radio,
+check:backdrop,              radio:backdrop,
+check:hover,                 radio:hover,
+check row:selected:backdrop, radio row:selected:backdrop,
+view.cell.check,             view.cell.radio,
+view.cell.check:backdrop,    view.cell.radio:backdrop
 {
-	border:                         1px solid @border_color;
-	color:                          #333;
+    background: linear-gradient(to bottom right, #949ea8 25%, #eff2f3 75%);
+    border:     1px solid #e2ebf0;
+    box-shadow: 0 0 0 1px #aebdcf;
+
+    min-height: 9px;
+    min-width:  9px;
+    margin:     3px;
 }
-check:disabled,
-radio:disabled
+radio,
+radio:backdrop,
+radio:hover,
+radio row:selected:backdrop,
+view.cell.radio,
+view.cell.radio:backdrop
 {
-	color:                          @insensitive_fg_color;
-}*/
+    border-radius: 50%;
+}
 menu check,
 menu radio
 {
