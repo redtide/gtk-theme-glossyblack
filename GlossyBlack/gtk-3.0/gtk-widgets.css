@@ -257,9 +257,15 @@ column-header .button:disabled
 {
 	background-color:               @insensitive_bg_color;
 }
+combobox arrow
+{
+	-gtk-icon-source:               -gtk-icontheme("pan-down-symbolic");
+	min-height:                     16px;
+	min-width:                      16px;
+}
 entry
 {
-    color:                          @fg_color;
+	color:                          @fg_color;
 	background-color:               @base_color;
 	border:                         1px solid @border_color;
 	padding:                        3px;
