@@ -14,11 +14,11 @@ paned separator
 }
 paned.vertical separator
 {
-    background-image:       url("../assets/pane-separator-grip-vertical.png");
+    background-image:       url("../assets/paned-separator-vertical.png");
 }
 paned.horizontal separator
 {
-    background-image:       url("../assets/pane-separator-grip.png");
+    background-image:       url("../assets/paned-separator-horizontal.png");
 }
 scale slider
 {
