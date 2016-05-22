@@ -33,7 +33,7 @@ scale.horizontal slider
 }
 scale.horizontal slider:hover
 {
-    background-image:       url("../assets/scale-horizontal-slider-prelight.png");
+    background-image:       url("../assets/scale-horizontal-slider-hover.png");
 }
 scale.vertical slider
 {
@@ -44,5 +44,5 @@ scale.vertical slider
 }
 scale.vertical slider:hover
 {
-    background-image:       url("../assets/scale-vertical-slider-prelight.png");
+    background-image:       url("../assets/scale-vertical-slider-hover.png");
 }
