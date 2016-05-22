@@ -7,15 +7,18 @@
     Copyright:   (c) Andrea Zanellato
     Licence:     GNU General Public License Version 3
 */
-pane-separator
+paned separator
 {
-    background-image:       url("../assets/pane-separator-grip.png");
     background-repeat:      no-repeat;
     background-position:    center;
 }
-pane-separator.vertical
+paned.vertical separator
 {
     background-image:       url("../assets/pane-separator-grip-vertical.png");
+}
+paned.horizontal separator
+{
+    background-image:       url("../assets/pane-separator-grip.png");
 }
 scale slider
 {
