@@ -7,12 +7,19 @@ See also <a href="http://gnome-look.org/content/show.php/?content=162055">gnome-
 ### Requirements
 
 * GTK 2.24 and/or GTK 3.20
-* The murrine engine. This has different names depending on your distro.
+
+* The murrine engine (GTK 2). This has different names depending on your distro.
   * `gtk-engine-murrine` (Arch Linux)
   * `gtk2-engines-murrine` (Debian, Ubuntu, elementary OS)
   * `gtk-murrine-engine` (Fedora)
   * `gtk2-engine-murrine` (openSUSE)
   * `gtk-engines-murrine` (Gentoo)
+ 
+* The pixbuf engine (GTK 2). As above:
+  * `gtk-engines` (Arch Linux)
+  * `gtk2-engines-pixbuf` (Debian, Ubuntu, elementary OS)
+  * `gtk2-engines`(Fedora, openSUSE)
+  * `gtk-engines-pixbuf` (Gentoo)
 
 ### Installation
 
