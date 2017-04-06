@@ -14,12 +14,13 @@ paned separator
 }
 paned.vertical separator
 {
-    background-image:       url("../assets/paned-separator-vertical.png");
+    background-image:       url("../assets/paned-vertical-separator.png");
 }
 paned.horizontal separator
 {
-    background-image:       url("../assets/paned-separator-horizontal.png");
+    background-image:       url("../assets/paned-horizontal-separator.png");
 }
+/*
 scale slider
 {
     border-style:           none;
@@ -46,3 +47,4 @@ scale.vertical slider:hover
 {
     background-image:       url("../assets/scale-vertical-slider-hover.png");
 }
+*/
