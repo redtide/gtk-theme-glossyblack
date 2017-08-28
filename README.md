@@ -43,6 +43,6 @@ and install per user with:
 ```cp -r ./GlossyBlack ~/.local/share/themes``` or ```~/.themes/GlossyBlack```
 
 or globally with:
-```sudo cp -r ./GlossyBlack /usr/local/themes```
+```sudo cp -r ./GlossyBlack /usr/local/share/themes``` or ```/usr/share/themes```
 
   
