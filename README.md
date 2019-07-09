@@ -2,7 +2,7 @@
 
 Glossy gradient styled GTK2/3 theme.
 
-See also <a href="http://gnome-look.org/content/show.php/?content=162055">gnome-look.org page</a>.
+See also <a href="https://www.opendesktop.org/p/1013218/">opendesktop.org page</a>.
 
 ### Requirements
 
